@@ -291,17 +291,3 @@ AGENT_LLM_MAX_RETRIES=2
 
 当前版本定位为企业内部 Agent Reliability Runtime 原型，已具备真实任务入口、真实 CSV 分析工具、可回放 Trace 和离线评估闭环；外部 API、代码执行和客户可见动作默认只做 dry-run 并要求审批，不会伪装成已经接入生产系统。下一阶段可接入企业 SSO、对象存储、真实知识库、队列 Worker 和审批系统。
 
-## 简历项目介绍
-
-**AetherFlow｜Enterprise Agent Orchestration & Reliability Platform**
-
-基于 FastAPI、SQLModel、PostgreSQL、React/TypeScript 构建面向企业员工的 Agent 工作台，设计并实现 Scenario Routing、LLM/规则双模 Planner、JSON Schema DAG 校验、Progressive Retrieval、可解释 Tool Router、真实 CSV Profiler、Critic 审核、Recovery 和 Memory Policy；通过 `AgentTraceStep` 持久化完整运行轨迹，并基于 benchmark 和随机种子压力测试验证工具选择、审批控制和运行稳定性。
-
-**面试可展开的技术点：**
-
-- 如何限制 LLM 输出：Pydantic/JSON Schema、重试、格式修复和确定性回退。
-- 如何防止 Agent 选错工具：候选召回、场景/语义/风险/延迟综合排序，并保存评分依据。
-- 如何处理高风险动作：Planner 强制 approval gate，Critic 二次审核，Executor 默认 dry-run。
-- 如何证明 Agent 真的有效：样本级 benchmark、随机种子稳定性测试、失败分类、Case 复盘和版本 Release Gate。
-- 如何让业务员工使用：自然语言入口、结果优先、Trace 作为可选工程详情，不要求用户配置工具。
-
