@@ -1,0 +1,11 @@
+客户编号,Product,区域,Monthly Revenue,服务请求数,Churn Risk
+C001,Aether One,华东,1680,2,0.18
+C002,Aether One,East,970,9,0.74
+C003,Flow Desk,华北,240,1,0.21
+C004,Flow Desk,华东,,0,0.09
+C005,Legacy Box,华南,69,15,0.91
+C006,Legacy Box,South,72,14,0.88
+C007,Cloud Relay,华东,310,3,0.29
+C008,Cloud Relay,East,9999,1,0.12
+C009,Cloud Relay,East,9999,1,0.12
+C010,Starter Kit,华南,59,7,0.68

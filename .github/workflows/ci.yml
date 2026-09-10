@@ -1,0 +1,66 @@
+name: AetherFlow CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  backend-agent:
+    name: Backend Agent Checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PROJECT_NAME: AetherFlow CI
+      SECRET_KEY: ci-only-secret
+      POSTGRES_SERVER: localhost
+      POSTGRES_PORT: "5432"
+      POSTGRES_DB: app
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ci-only-password
+      FIRST_SUPERUSER: ci@example.com
+      FIRST_SUPERUSER_PASSWORD: ci-only-password
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          version: "0.9.26"
+
+      - name: Install backend dependencies
+        run: uv sync --directory backend
+
+      - name: Run Agent tests
+        run: uv run --directory backend pytest tests/agent -q
+
+      - name: Run Agent lint checks
+        run: uv run --directory backend ruff check app/agent scripts/run_reliability_eval.py tests/agent
+
+  frontend-build:
+    name: Frontend Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: "1.3.14"
+
+      - name: Install frontend dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Build frontend
+        run: bun run --filter frontend build

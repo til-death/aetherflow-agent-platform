@@ -1,0 +1,313 @@
+﻿[
+  {
+    "name": "toolluban_policy_search",
+    "label": "制度知识检索器",
+    "scenario": "knowledge",
+    "risk_level": "low",
+    "avg_latency_ms": 190,
+    "success_rate": 0.91,
+    "keywords": ["制度", "政策", "知识库", "文档", "条款", "依据", "引用", "检索", "policy"],
+    "description": "从制度、政策和知识库中检索可引用依据。"
+  },
+  {
+    "name": "toolluban_runbook_retriever",
+    "label": "运维手册检索器",
+    "scenario": "knowledge",
+    "risk_level": "low",
+    "avg_latency_ms": 210,
+    "success_rate": 0.9,
+    "keywords": ["runbook", "手册", "操作步骤", "应急", "预案", "恢复", "处置", "SOP"],
+    "description": "检索运维手册、SOP 和应急处置步骤。"
+  },
+  {
+    "name": "toolluban_dependency_graph",
+    "label": "依赖关系图谱扩展器",
+    "scenario": "knowledge",
+    "risk_level": "low",
+    "avg_latency_ms": 260,
+    "success_rate": 0.88,
+    "keywords": ["依赖", "链路", "上下游", "影响面", "根因", "服务关系", "负责人", "拓扑", "dependency"],
+    "description": "扩展服务、项目、负责人和事故之间的多跳关系。"
+  },
+  {
+    "name": "toolluban_customer_profile_lookup",
+    "label": "客户画像查询器",
+    "scenario": "knowledge",
+    "risk_level": "medium",
+    "avg_latency_ms": 230,
+    "success_rate": 0.84,
+    "keywords": ["客户画像", "账户", "套餐", "行业", "区域", "客户资料", "profile", "lookup"],
+    "description": "查询客户画像和账户上下文，用于后续路由和风险判断。"
+  },
+  {
+    "name": "toolluban_risk_knowledge_base",
+    "label": "风险知识库匹配器",
+    "scenario": "knowledge",
+    "risk_level": "medium",
+    "avg_latency_ms": 240,
+    "success_rate": 0.86,
+    "keywords": ["风险知识", "风险规则", "合规依据", "审批依据", "风控", "隐私", "安全"],
+    "description": "匹配风险、合规和审批依据。"
+  },
+  {
+    "name": "toolluban_workflow_dispatcher",
+    "label": "流程派发器",
+    "scenario": "workflow",
+    "risk_level": "medium",
+    "avg_latency_ms": 220,
+    "success_rate": 0.9,
+    "keywords": ["流程", "派发", "分派", "流转", "负责人", "队列", "处理人", "dispatcher"],
+    "description": "根据流程状态、负责人和队列规则派发任务。"
+  },
+  {
+    "name": "toolluban_approval_gate",
+    "label": "审批关卡控制台",
+    "scenario": "workflow",
+    "risk_level": "high",
+    "avg_latency_ms": 180,
+    "success_rate": 0.94,
+    "keywords": ["审批", "人工审批", "审批关卡", "拦截", "高风险", "财务", "法务", "合规", "确认"],
+    "description": "为高风险任务创建人工审批关卡，并阻止直接变更。"
+  },
+  {
+    "name": "toolluban_sla_escalation",
+    "label": "SLA 升级器",
+    "scenario": "workflow",
+    "risk_level": "medium",
+    "avg_latency_ms": 210,
+    "success_rate": 0.87,
+    "keywords": ["SLA", "超时", "升级", "催办", "临期", "工时", "时限", "escalation"],
+    "description": "识别 SLA 临期和超时场景，生成升级路径。"
+  },
+  {
+    "name": "toolluban_handoff_note_writer",
+    "label": "交接说明生成器",
+    "scenario": "workflow",
+    "risk_level": "low",
+    "avg_latency_ms": 160,
+    "success_rate": 0.89,
+    "keywords": ["交接说明", "交接备注", "handoff note", "上下文说明", "交接上下文"],
+    "description": "生成流程交接说明和下一步行动记录。"
+  },
+  {
+    "name": "toolluban_process_state_sync",
+    "label": "流程状态同步器",
+    "scenario": "workflow",
+    "risk_level": "medium",
+    "avg_latency_ms": 250,
+    "success_rate": 0.88,
+    "keywords": ["流程状态", "状态同步", "节点", "推进", "状态", "owner", "handoff", "process"],
+    "description": "同步流程状态、当前节点和负责人。"
+  },
+  {
+    "name": "toolluban_batch_task_creator",
+    "label": "批量任务创建器",
+    "scenario": "workflow",
+    "risk_level": "medium",
+    "avg_latency_ms": 280,
+    "success_rate": 0.86,
+    "keywords": ["批量任务", "批量创建", "任务拆分", "任务分配", "待办", "队列"],
+    "description": "将批量目标拆分成可追踪任务并分配到队列。"
+  },
+  {
+    "name": "toolluban_python_reconcile_runner",
+    "label": "Python 对账沙箱",
+    "scenario": "code",
+    "risk_level": "high",
+    "avg_latency_ms": 360,
+    "success_rate": 0.84,
+    "keywords": ["python", "对账", "核对", "脚本", "计算", "沙箱", "stdout", "reconcile"],
+    "description": "在受限沙箱中运行 Python 对账和计算脚本。"
+  },
+  {
+    "name": "toolluban_sql_dryrun_checker",
+    "label": "SQL Dry-run 检查器",
+    "scenario": "code",
+    "risk_level": "high",
+    "avg_latency_ms": 320,
+    "success_rate": 0.83,
+    "keywords": ["SQL", "dry-run", "查询", "更新语句", "执行计划", "数据库", "回滚"],
+    "description": "检查 SQL 语句风险，生成 dry-run 和回滚建议。"
+  },
+  {
+    "name": "toolluban_script_patch_generator",
+    "label": "脚本补丁生成器",
+    "scenario": "code",
+    "risk_level": "medium",
+    "avg_latency_ms": 300,
+    "success_rate": 0.81,
+    "keywords": ["脚本", "补丁", "patch", "修复", "代码", "diff", "变更"],
+    "description": "生成可审查的脚本或代码补丁。"
+  },
+  {
+    "name": "toolluban_log_parser",
+    "label": "日志解析器",
+    "scenario": "code",
+    "risk_level": "low",
+    "avg_latency_ms": 240,
+    "success_rate": 0.88,
+    "keywords": ["日志", "log", "错误栈", "异常", "解析", "traceback", "排查"],
+    "description": "解析日志和错误栈，提取异常模式。"
+  },
+  {
+    "name": "toolluban_dataframe_profiler",
+    "label": "中文数据表画像工具",
+    "scenario": "analysis",
+    "risk_level": "medium",
+    "avg_latency_ms": 310,
+    "success_rate": 0.91,
+    "keywords": ["CSV", "数据", "字段", "画像", "缺失", "数值统计", "分类统计", "异常", "中文", "dataframe"],
+    "description": "对中英文 CSV 做字段画像、缺失值统计、数值统计、分类统计和异常提示。"
+  },
+  {
+    "name": "toolluban_metric_anomaly_detector",
+    "label": "指标异常检测器",
+    "scenario": "analysis",
+    "risk_level": "medium",
+    "avg_latency_ms": 300,
+    "success_rate": 0.88,
+    "keywords": ["指标", "异常", "波动", "告警", "趋势", "metric", "anomaly"],
+    "description": "检测指标异常波动并输出可能原因。"
+  },
+  {
+    "name": "toolluban_cohort_report_builder",
+    "label": "分群报表生成器",
+    "scenario": "analysis",
+    "risk_level": "low",
+    "avg_latency_ms": 280,
+    "success_rate": 0.86,
+    "keywords": ["分群", "cohort", "报表", "客群", "留存", "转化", "对比"],
+    "description": "生成分群报表和对比摘要。"
+  },
+  {
+    "name": "toolluban_quality_rule_checker",
+    "label": "数据质量规则检查器",
+    "scenario": "analysis",
+    "risk_level": "medium",
+    "avg_latency_ms": 260,
+    "success_rate": 0.87,
+    "keywords": ["数据质量", "质量规则", "缺失", "重复", "空值", "校验", "schema"],
+    "description": "检查数据质量规则、空值、重复和 schema 偏差。"
+  },
+  {
+    "name": "toolluban_forecast_sanity_checker",
+    "label": "预测结果合理性检查器",
+    "scenario": "analysis",
+    "risk_level": "medium",
+    "avg_latency_ms": 290,
+    "success_rate": 0.82,
+    "keywords": ["预测", "forecast", "合理性", "基线", "偏差", "置信区间"],
+    "description": "检查预测结果是否偏离基线和置信区间。"
+  },
+  {
+    "name": "toolluban_dashboard_health_scan",
+    "label": "看板健康扫描器",
+    "scenario": "analysis",
+    "risk_level": "low",
+    "avg_latency_ms": 250,
+    "success_rate": 0.85,
+    "keywords": ["看板", "dashboard", "图表", "刷新", "延迟", "指标健康", "报表"],
+    "description": "扫描看板刷新、图表和指标健康状态。"
+  },
+  {
+    "name": "toolluban_crm_batch_sync",
+    "label": "CRM 批量同步接口",
+    "scenario": "external_api",
+    "risk_level": "high",
+    "avg_latency_ms": 330,
+    "success_rate": 0.86,
+    "keywords": ["CRM", "批量同步", "客户资料", "第三方", "外部系统", "写入", "更新", "同步", "idempotency"],
+    "description": "准备 CRM 批量同步请求，包含 schema 校验、幂等键和审批要求。"
+  },
+  {
+    "name": "toolluban_wecom_notify",
+    "label": "企业微信通知接口",
+    "scenario": "external_api",
+    "risk_level": "medium",
+    "avg_latency_ms": 210,
+    "success_rate": 0.89,
+    "keywords": ["企业微信", "企微", "通知", "机器人", "消息", "webhook", "外部", "发送"],
+    "description": "生成企业微信通知接口调用计划。"
+  },
+  {
+    "name": "toolluban_erp_order_update",
+    "label": "ERP 订单更新接口",
+    "scenario": "external_api",
+    "risk_level": "high",
+    "avg_latency_ms": 340,
+    "success_rate": 0.8,
+    "keywords": ["ERP", "订单", "发货", "状态更新", "外部系统", "写入", "同步", "回滚"],
+    "description": "准备 ERP 订单状态更新请求和回滚计划。"
+  },
+  {
+    "name": "toolluban_webhook_replay_guard",
+    "label": "Webhook 重放保护器",
+    "scenario": "external_api",
+    "risk_level": "high",
+    "avg_latency_ms": 290,
+    "success_rate": 0.84,
+    "keywords": ["webhook", "回调", "重放", "幂等", "事件", "签名", "外部接口"],
+    "description": "校验 webhook 重放、幂等和签名策略。"
+  },
+  {
+    "name": "toolluban_payment_refund_api",
+    "label": "支付退款接口",
+    "scenario": "external_api",
+    "risk_level": "high",
+    "avg_latency_ms": 310,
+    "success_rate": 0.82,
+    "keywords": ["退款", "支付", "金额", "财务", "外部接口", "退费", "审批", "幂等"],
+    "description": "准备支付退款 API 的 schema、幂等键、审批和回滚说明。"
+  },
+  {
+    "name": "toolluban_workitem_api_bridge",
+    "label": "工作项系统桥接器",
+    "scenario": "external_api",
+    "risk_level": "medium",
+    "avg_latency_ms": 270,
+    "success_rate": 0.85,
+    "keywords": ["工作项", "需求", "缺陷", "外部系统", "同步", "创建", "更新", "bridge"],
+    "description": "桥接外部工作项系统，生成幂等创建或更新计划。"
+  },
+  {
+    "name": "toolluban_memory_policy_writer",
+    "label": "记忆策略写入器",
+    "scenario": "general",
+    "risk_level": "low",
+    "avg_latency_ms": 130,
+    "success_rate": 0.9,
+    "keywords": ["记忆", "写入", "长期记忆", "短期记忆", "沉淀", "策略", "memory"],
+    "description": "判断运行经验是否进入短期或长期记忆。"
+  },
+  {
+    "name": "toolluban_preference_extractor",
+    "label": "偏好抽取器",
+    "scenario": "general",
+    "risk_level": "low",
+    "avg_latency_ms": 120,
+    "success_rate": 0.91,
+    "keywords": ["偏好", "习惯", "用户偏好", "规则偏好", "记忆", "抽取", "提取", "preference"],
+    "description": "从任务中抽取可复用偏好和策略。"
+  },
+  {
+    "name": "toolluban_summary_compactor",
+    "label": "摘要压缩器",
+    "scenario": "general",
+    "risk_level": "low",
+    "avg_latency_ms": 115,
+    "success_rate": 0.89,
+    "keywords": ["摘要", "压缩", "总结", "归档", "长文本", "summary"],
+    "description": "将长 Trace 或运行说明压缩成可归档摘要。"
+  },
+  {
+    "name": "toolluban_eval_note_memory",
+    "label": "评估备注记忆器",
+    "scenario": "general",
+    "risk_level": "low",
+    "avg_latency_ms": 140,
+    "success_rate": 0.88,
+    "keywords": ["评估备注", "失败经验", "复盘", "改进建议", "记忆", "scorer"],
+    "description": "把评估失败原因和改进建议沉淀为记忆候选。"
+  }
+]
+

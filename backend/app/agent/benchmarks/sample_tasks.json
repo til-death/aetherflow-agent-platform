@@ -1,0 +1,300 @@
+﻿[
+    {
+        "id":  "knowledge_001",
+        "title":  "Explain a project dependency incident path",
+        "objective":  "Trace the root cause relationship between project Atlas, an upstream dependency incident, the owning team, and the required handoff path.",
+        "context":  "The workflow for project Atlas failed after a downstream SLA job stalled. Operators need to understand the dependency relationship, recent incident path, owner mapping, and root cause before choosing a remediation workflow.",
+        "expected_output":  "dependency graph, owner mapping, incident relationship, root cause hypothesis, and evidence gaps",
+        "scenario_hint":  null,
+        "priority":  "medium",
+        "risk_level":  "low",
+        "requires_approval":  false,
+        "tags":  [
+                     "knowledge",
+                     "dependency",
+                     "incident",
+                     "owner",
+                     "root_cause"
+                 ],
+        "expected_scenario":  "knowledge",
+        "expected_tool":  "graph_neighbor_expand",
+        "expected_approval":  false,
+        "expected_contract_terms":  [
+                                        "工具",
+                                        "理由",
+                                        "风险",
+                                        "审批",
+                                        "证据",
+                                        "下一步"
+                                    ]
+    },
+    {
+        "id":  "knowledge_002",
+        "title":  "Retrieve operating policy for agent reliability",
+        "objective":  "Find the relevant policy, document, knowledge article, and runbook that explain why high-risk automation must expose evidence, recovery, critic checks, and approval behavior.",
+        "context":  "A platform reviewer asks for a grounded explanation of the runtime reliability policy before approving a new autonomous workflow.",
+        "expected_output":  "policy citations, runbook summary, risk rationale, and recovery requirement",
+        "scenario_hint":  null,
+        "priority":  "medium",
+        "risk_level":  "low",
+        "requires_approval":  false,
+        "tags":  [
+                     "knowledge",
+                     "policy",
+                     "document",
+                     "runbook",
+                     "reliability"
+                 ],
+        "expected_scenario":  "knowledge",
+        "expected_tool":  "hybrid_knowledge_search",
+        "expected_approval":  false,
+        "expected_contract_terms":  [
+                                        "工具",
+                                        "理由",
+                                        "风险",
+                                        "审批",
+                                        "证据",
+                                        "下一步"
+                                    ]
+    },
+    {
+        "id":  "workflow_001",
+        "title":  "Advance onboarding workflow with owner handoff",
+        "objective":  "Move an enterprise onboarding workflow to the next controlled state, assign the owner, record the SLA checkpoint, and produce a handoff note.",
+        "context":  "The implementation team has completed prerequisites. The operator needs a workflow state transition with owner, process checkpoint, SLA date, and audit metadata.",
+        "expected_output":  "next workflow state, owner, SLA checkpoint, handoff note, and audit metadata",
+        "scenario_hint":  null,
+        "priority":  "medium",
+        "risk_level":  "medium",
+        "requires_approval":  false,
+        "tags":  [
+                     "workflow",
+                     "handoff",
+                     "sla",
+                     "owner",
+                     "process"
+                 ],
+        "expected_scenario":  "workflow",
+        "expected_tool":  "workflow_state_transition",
+        "expected_approval":  false,
+        "expected_contract_terms":  [
+                                        "工具",
+                                        "理由",
+                                        "风险",
+                                        "审批",
+                                        "证据",
+                                        "下一步"
+                                    ]
+    },
+    {
+        "id":  "workflow_002",
+        "title":  "Block a critical finance workflow until approval",
+        "objective":  "Create an approval gate before a critical finance workflow changes a customer-visible contract state, and require human review before mutation.",
+        "context":  "The action affects contract terms and finance records. Legal and finance reviewers must approve the change before the runtime can execute the workflow transition.",
+        "expected_output":  "approval checkpoint, reviewer role, risk reason, blocked mutation, and resume condition",
+        "scenario_hint":  null,
+        "priority":  "high",
+        "risk_level":  "high",
+        "requires_approval":  true,
+        "tags":  [
+                     "workflow",
+                     "approval",
+                     "finance",
+                     "legal",
+                     "critical",
+                     "human"
+                 ],
+        "expected_scenario":  "workflow",
+        "expected_tool":  "approval_gate",
+        "expected_approval":  true,
+        "expected_contract_terms":  [
+                                        "工具",
+                                        "理由",
+                                        "风险",
+                                        "审批",
+                                        "证据",
+                                        "下一步"
+                                    ]
+    },
+    {
+        "id":  "code_001",
+        "title":  "Run a constrained Python reconciliation dry-run",
+        "objective":  "Use a python script to calculate a reconciliation delta, execute it in a sandbox, and return stdout plus resource limits without touching production systems.",
+        "context":  "Input values: source_total=12840, ledger_total=12790, pending_adjustments=50. The operator wants a deterministic dry-run calculation and traceable execution metadata.",
+        "expected_output":  "sandbox result, calculation, stdout, timeout policy, and dry-run status",
+        "scenario_hint":  null,
+        "priority":  "medium",
+        "risk_level":  "high",
+        "requires_approval":  true,
+        "tags":  [
+                     "code",
+                     "python",
+                     "script",
+                     "execute",
+                     "calculate",
+                     "dry_run"
+                 ],
+        "expected_scenario":  "code",
+        "expected_tool":  "python_sandbox_runner",
+        "expected_approval":  true,
+        "expected_contract_terms":  [
+                                        "工具",
+                                        "理由",
+                                        "风险",
+                                        "审批",
+                                        "证据",
+                                        "下一步"
+                                    ]
+    },
+    {
+        "id":  "analysis_001",
+        "title":  "Profile revenue cohort CSV for anomaly hints",
+        "objective":  "Analyze this CSV metric data, detect missing values, summarize revenue and cohort fields, and return anomaly hints for the dashboard owner.",
+        "context":  "account_id,cohort,region,revenue,usage_hours,churn_risk\nA001,enterprise,east,12800,340,0.12\nA002,growth,west,2400,88,0.31\nA003,growth,west,,64,0.46\nA004,startup,south,390,12,0.71\nA005,enterprise,east,18200,410,0.08",
+        "expected_output":  "column count, missing values, numeric summary, categorical summary, anomaly hints",
+        "scenario_hint":  null,
+        "priority":  "medium",
+        "risk_level":  "medium",
+        "requires_approval":  false,
+        "tags":  [
+                     "analysis",
+                     "csv",
+                     "metric",
+                     "revenue",
+                     "cohort",
+                     "missing",
+                     "anomaly"
+                 ],
+        "expected_scenario":  "analysis",
+        "expected_tool":  "data_frame_profiler",
+        "expected_approval":  false,
+        "expected_contract_terms":  [
+                                        "工具",
+                                        "理由",
+                                        "风险",
+                                        "审批",
+                                        "证据",
+                                        "下一步"
+                                    ]
+    },
+    {
+        "id":  "analysis_002",
+        "title":  "Profile bilingual operations CSV",
+        "objective":  "对这份 CSV 指标数据做 analysis，检查 missing 字段、metric 波动、revenue 异常，并输出可交给数据运营的画像结论。",
+        "context":  "客户编号,行业,地区,revenue,活跃小时,missing_flag,anomaly_score\nC001,金融,华东,16800,320,false,0.18\nC002,零售,华南,790,44,false,0.62\nC003,教育,华北,,28,true,0.71\nC004,医疗,华东,9200,210,false,0.22\nC005,零售,华南,690,18,false,0.84",
+        "expected_output":  "字段数量、缺失值、numeric summary、categorical summary、anomaly hints",
+        "scenario_hint":  null,
+        "priority":  "medium",
+        "risk_level":  "medium",
+        "requires_approval":  false,
+        "tags":  [
+                     "analysis",
+                     "csv",
+                     "metric",
+                     "revenue",
+                     "missing",
+                     "anomaly",
+                     "中文"
+                 ],
+        "expected_scenario":  "analysis",
+        "expected_tool":  "data_frame_profiler",
+        "expected_approval":  false,
+        "expected_contract_terms":  [
+                                        "工具",
+                                        "理由",
+                                        "风险",
+                                        "审批",
+                                        "证据",
+                                        "下一步"
+                                    ]
+    },
+    {
+        "id":  "external_001",
+        "title":  "Prepare an idempotent CRM API update",
+        "objective":  "Use the external API connector to validate a CRM update schema, prepare an idempotency key, notify the target work item, and require approval before the customer-visible update.",
+        "context":  "Target system: CRM. Operation: update account risk_status and notify account_owner. This is an external customer-visible write and must be auditable.",
+        "expected_output":  "API schema, idempotency key, approval requirement, rollback note, and dry-run request payload",
+        "scenario_hint":  null,
+        "priority":  "high",
+        "risk_level":  "high",
+        "requires_approval":  true,
+        "tags":  [
+                     "external",
+                     "api",
+                     "crm",
+                     "update",
+                     "notify",
+                     "work_item",
+                     "approval"
+                 ],
+        "expected_scenario":  "external_api",
+        "expected_tool":  "http_api_connector",
+        "expected_approval":  true,
+        "expected_contract_terms":  [
+                                        "工具",
+                                        "理由",
+                                        "风险",
+                                        "审批",
+                                        "证据",
+                                        "下一步"
+                                    ]
+    },
+    {
+        "id":  "memory_001",
+        "title":  "Decide whether an operator preference should become memory",
+        "objective":  "Review this preference summary and decide whether the lesson should be written to short-term or long-term memory for future workflow planning.",
+        "context":  "The operator prefers that risky external actions always include rollback notes and that finance-related tasks mention the approval owner explicitly.",
+        "expected_output":  "memory decision, scope, retention reason, and normalized insight",
+        "scenario_hint":  null,
+        "priority":  "low",
+        "risk_level":  "low",
+        "requires_approval":  false,
+        "tags":  [
+                     "memory",
+                     "preference",
+                     "lesson",
+                     "summary",
+                     "insight"
+                 ],
+        "expected_scenario":  "general",
+        "expected_tool":  "memory_write_policy",
+        "expected_approval":  false,
+        "expected_contract_terms":  [
+                                        "工具",
+                                        "理由",
+                                        "风险",
+                                        "审批",
+                                        "证据",
+                                        "下一步"
+                                    ]
+    },
+    {
+        "id":  "routing_001",
+        "title":  "Ambiguous automation request with weak tool evidence",
+        "objective":  "Create a safe plan for an automation request that mentions dashboard review, process notes, and an owner update, then explain which tool should run first.",
+        "context":  "The request is intentionally ambiguous: it mentions dashboard metrics, process handoff, owner update, and a light summary. The benchmark expects the workflow tool, but the router may prefer analysis because of metric language.",
+        "expected_output":  "chosen scenario, chosen tool, why alternatives were rejected, approval decision, and next safe step",
+        "scenario_hint":  null,
+        "priority":  "medium",
+        "risk_level":  "medium",
+        "requires_approval":  false,
+        "tags":  [
+                     "workflow",
+                     "dashboard",
+                     "metric",
+                     "owner",
+                     "handoff"
+                 ],
+        "expected_scenario":  "workflow",
+        "expected_tool":  "workflow_state_transition",
+        "expected_approval":  false,
+        "expected_contract_terms":  [
+                                        "工具",
+                                        "理由",
+                                        "风险",
+                                        "审批",
+                                        "证据",
+                                        "下一步"
+                                    ]
+    }
+]

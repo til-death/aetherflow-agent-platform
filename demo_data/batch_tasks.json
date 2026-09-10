@@ -1,0 +1,54 @@
+[
+  {
+    "title": "分析客户续费风险",
+    "objective": "分析客户续费数据，找出高流失风险客户、异常收入和需要优先跟进的区域。",
+    "context": "请使用 demo_data/sales_mixed_locale.csv 中的数据，输出字段画像、缺失值、数值统计、分类分布、异常提示和三条跟进建议。",
+    "expected_output": "字段数量、缺失值、数值统计、分类统计、异常提示、跟进建议",
+    "scenario_hint": "analysis",
+    "priority": "high",
+    "status": "ready",
+    "risk_level": "medium",
+    "requires_approval": false,
+    "owner_team": "customer-success",
+    "tags": ["续费", "数据分析", "CSV画像"]
+  },
+  {
+    "title": "查询差旅报销制度",
+    "objective": "根据企业差旅制度整理国内出差的报销材料、审批步骤和容易被驳回的情况。",
+    "context": "回答必须区分制度原文、合理推断和缺失信息，不要编造没有依据的金额标准。",
+    "expected_output": "制度依据、材料清单、审批步骤、风险提示",
+    "scenario_hint": "knowledge",
+    "priority": "medium",
+    "status": "ready",
+    "risk_level": "low",
+    "requires_approval": false,
+    "owner_team": "people-ops",
+    "tags": ["制度", "报销", "知识检索"]
+  },
+  {
+    "title": "准备客户开户流程",
+    "objective": "拆解客户开户流程，检查合同、身份验证、CRM 建档和欢迎邮件各步骤的证据与负责人。",
+    "context": "CRM 建档和客户可见邮件都只能生成 dry-run 方案，必须由负责人确认后才能执行。",
+    "expected_output": "DAG步骤、负责人、证据缺口、审批判断、下一步",
+    "scenario_hint": "workflow",
+    "priority": "high",
+    "status": "ready",
+    "risk_level": "high",
+    "requires_approval": true,
+    "owner_team": "customer-ops",
+    "tags": ["开户", "审批", "dry-run"]
+  },
+  {
+    "title": "准备 CRM 批量同步",
+    "objective": "检查一批客户状态同步到 CRM 的接口字段、幂等键和失败恢复方案，不要直接写入外部系统。",
+    "context": "这是外部系统写入任务，需要校验 API schema、幂等策略、凭证范围和人工审批责任人。",
+    "expected_output": "接口契约、幂等方案、风险说明、审批关卡、dry-run结果",
+    "scenario_hint": "external_api",
+    "priority": "high",
+    "status": "ready",
+    "risk_level": "high",
+    "requires_approval": true,
+    "owner_team": "integration-ops",
+    "tags": ["CRM", "API", "同步", "高风险"]
+  }
+]
