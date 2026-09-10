@@ -227,6 +227,19 @@ uv run --directory backend python scripts/run_reliability_eval.py --dataset tool
 
 详细统计见：[评测结果与失败样本](docs/evaluation-results.md)。
 
+### 最近一次可复现实测
+
+| 范围 | 结果 |
+| --- | --- |
+| Agent 核心单测 | `9 passed` |
+| `sample` 基线 | `10/10` 通过 |
+| `sample` 压力测试 | `114/120` 通过，95% |
+| `toolluban` 基线 | `13/13` 通过 |
+| `toolluban` 压力测试 | `153/156` 通过，98% |
+| 高风险审批漏判 | `0%` |
+
+结果来自本地 Runtime 的实际离线运行，不依赖外部 LLM API Key。失败样本会保留在 JSON 输出中，并用于定位稀疏输入下的数据证据缺失和动态工具排序问题。
+
 前端构建：
 
 ```powershell
@@ -236,6 +249,10 @@ bun run --filter frontend build
 评估页面中的 Release Gate 不是装饰性分数，而是由场景路由、工具 Top@1/Top@3、审批判断、Trace 完整性、输出契约和失败 Case 共同决定。任何门禁不达标都会给出复盘类别和下一步建议。
 
 在需要观察规划和工具选择稳定性时，可以让 benchmark 在多组随机种子下重复测试，并比较指标均值、波动范围和失败 Case。随机种子用于实验复现与稳定性分析。
+
+### 评测数据的可信边界
+
+`sample_tasks.json` 和 `toolluban_tasks.json` 是仓库内可审计、可复现的工程 benchmark；其中 `toolluban` 是 ToolLuban-style 动态工具路由数据集，不是官方公开排行榜结果。公开基准方面，项目将 [HELM（Stanford CRFM）](https://github.com/stanford-crfm/helm) 作为模型能力评测参考，将 [τ-Bench](https://github.com/sierra-research/tau-bench) 作为工具交互评测参考，但当前 README 不虚构尚未实际执行的公开 benchmark 分数。
 
 ## 发布到 GitHub
 
