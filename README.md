@@ -1,6 +1,6 @@
-# AetherFlow
+# 稳流
 
-## Enterprise Agent Orchestration & Reliability Platform
+## Agent任务编排与可靠性治理运行时
 
 面向企业员工的智能任务编排与可靠性运行平台。
 
@@ -9,7 +9,7 @@
 [![Evaluation](https://img.shields.io/badge/evaluation-seeded%20robustness%20tests-7c3aed)](backend/app/agent/benchmarks/)
 [![License](https://img.shields.io/badge/license-MIT-64748b)](LICENSE)
 
-AetherFlow 将员工的自然语言目标转化为可审计的 Workflow Task，并经过场景路由、结构化规划、证据检索、工具选择、风险校验和结果回放。高风险操作默认只生成 dry-run 方案，必须经过人工审批后才能进入后续流程。
+稳流将员工的自然语言目标转化为可审计的 Workflow Task，并经过场景路由、结构化规划、证据检索、工具选择、风险校验和结果回放。高风险操作默认只生成 dry-run 方案，必须经过人工审批后才能进入后续流程。
 
 项目重点不是“让模型多说一句答案”，而是把 Agent 的决策过程变成一条可验证、可恢复、可评估的企业任务执行链路。
 
@@ -24,7 +24,7 @@ AetherFlow 将员工的自然语言目标转化为可审计的 Workflow Task，�
 - 任务涉及高风险动作时，是否必须由人确认？
 - 一次失败发生在哪个阶段，能否恢复并保留完整审计记录？
 
-AetherFlow 将这些判断拆成 Runtime 的显式阶段，并将每个阶段保存为 `AgentTraceStep`。
+稳流将这些判断拆成 Runtime 的显式阶段，并将每个阶段保存为 `AgentTraceStep`。
 
 ## 产品界面
 
@@ -261,7 +261,7 @@ bun run --filter frontend build
 ```powershell
 git init -b main
 git add -A
-git commit -m "chore: prepare AetherFlow for GitHub"
+git commit -m "chore: prepare 稳流 for GitHub"
 git remote add origin https://github.com/<your-account>/<your-repository>.git
 git push -u origin main
 ```

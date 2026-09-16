@@ -27,7 +27,7 @@ function Layout() {
             <SidebarTrigger className="-ml-1 text-muted-foreground" />
             <div className="hidden min-w-0 items-center gap-2 md:flex">
               <span className="size-2 rounded-full bg-emerald-500" />
-              <span className="truncate text-sm font-bold text-foreground">AetherFlow 工作台</span>
+              <span className="truncate text-sm font-bold text-foreground">稳流工作台</span>
               <span className="rounded-full border bg-card px-2.5 py-1 text-xs font-semibold text-muted-foreground">企业任务处理</span>
             </div>
           </div>

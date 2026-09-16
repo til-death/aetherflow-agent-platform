@@ -1,0 +1,368 @@
+{
+  "dataset": "hard_holdout_v1",
+  "freeze_policy": "Created after Runtime freeze; failures must not be used for rule tuning.",
+  "manifest_sha256": "c18666443ea2a75ff2776c5fc317b48eafaa3828dae0d426da3e1c5fc0c7e8aa",
+  "case_count": 150,
+  "cases_per_scenario": 30,
+  "tool_pool": 23,
+  "hard_dimensions": [
+    "similar_tool_interference",
+    "partial_or_ambiguous_input",
+    "cross_scenario_routing",
+    "multi_step_dependency",
+    "unseen_mixed_language_and_business_phrasing"
+  ],
+  "overall": {
+    "case_count": 150,
+    "passed": 102,
+    "pass_rate": 0.68,
+    "handled": 103,
+    "handled_rate": 0.6867,
+    "scenario_accuracy": 0.9533,
+    "tool_top1": 0.6933,
+    "tool_top3": 0.9467,
+    "approval_accuracy": 0.9733,
+    "trace_completeness": 1.0,
+    "high_risk_cases": 85,
+    "high_risk_false_negatives": 0,
+    "failure_taxonomy": {
+      "Router": 7,
+      "Retrieval": 1,
+      "Tool Selection": 39,
+      "Argument": 0,
+      "Execution": 0,
+      "Evidence": 0,
+      "Approval": 1
+    }
+  },
+  "by_scenario": {
+    "knowledge": {
+      "case_count": 30,
+      "passed": 21,
+      "pass_rate": 0.7,
+      "handled": 21,
+      "handled_rate": 0.7,
+      "scenario_accuracy": 0.8667,
+      "tool_top1": 0.7333,
+      "tool_top3": 0.8667,
+      "approval_accuracy": 0.8667,
+      "trace_completeness": 1.0,
+      "high_risk_cases": 0,
+      "high_risk_false_negatives": 0,
+      "failure_taxonomy": {
+        "Router": 4,
+        "Retrieval": 0,
+        "Tool Selection": 4,
+        "Argument": 0,
+        "Execution": 0,
+        "Evidence": 0,
+        "Approval": 1
+      }
+    },
+    "workflow": {
+      "case_count": 30,
+      "passed": 20,
+      "pass_rate": 0.6667,
+      "handled": 20,
+      "handled_rate": 0.6667,
+      "scenario_accuracy": 0.9333,
+      "tool_top1": 0.6667,
+      "tool_top3": 0.8667,
+      "approval_accuracy": 1.0,
+      "trace_completeness": 1.0,
+      "high_risk_cases": 20,
+      "high_risk_false_negatives": 0,
+      "failure_taxonomy": {
+        "Router": 2,
+        "Retrieval": 0,
+        "Tool Selection": 8,
+        "Argument": 0,
+        "Execution": 0,
+        "Evidence": 0,
+        "Approval": 0
+      }
+    },
+    "code": {
+      "case_count": 30,
+      "passed": 25,
+      "pass_rate": 0.8333,
+      "handled": 25,
+      "handled_rate": 0.8333,
+      "scenario_accuracy": 1.0,
+      "tool_top1": 0.8333,
+      "tool_top3": 1.0,
+      "approval_accuracy": 1.0,
+      "trace_completeness": 1.0,
+      "high_risk_cases": 30,
+      "high_risk_false_negatives": 0,
+      "failure_taxonomy": {
+        "Router": 0,
+        "Retrieval": 0,
+        "Tool Selection": 5,
+        "Argument": 0,
+        "Execution": 0,
+        "Evidence": 0,
+        "Approval": 0
+      }
+    },
+    "analysis": {
+      "case_count": 30,
+      "passed": 12,
+      "pass_rate": 0.4,
+      "handled": 13,
+      "handled_rate": 0.4333,
+      "scenario_accuracy": 1.0,
+      "tool_top1": 0.4333,
+      "tool_top3": 1.0,
+      "approval_accuracy": 1.0,
+      "trace_completeness": 1.0,
+      "high_risk_cases": 5,
+      "high_risk_false_negatives": 0,
+      "failure_taxonomy": {
+        "Router": 0,
+        "Retrieval": 1,
+        "Tool Selection": 17,
+        "Argument": 0,
+        "Execution": 0,
+        "Evidence": 0,
+        "Approval": 0
+      }
+    },
+    "external_api": {
+      "case_count": 30,
+      "passed": 24,
+      "pass_rate": 0.8,
+      "handled": 24,
+      "handled_rate": 0.8,
+      "scenario_accuracy": 0.9667,
+      "tool_top1": 0.8,
+      "tool_top3": 1.0,
+      "approval_accuracy": 1.0,
+      "trace_completeness": 1.0,
+      "high_risk_cases": 30,
+      "high_risk_false_negatives": 0,
+      "failure_taxonomy": {
+        "Router": 1,
+        "Retrieval": 0,
+        "Tool Selection": 5,
+        "Argument": 0,
+        "Execution": 0,
+        "Evidence": 0,
+        "Approval": 0
+      }
+    }
+  },
+  "representative_failures": [
+    {
+      "id": "hh_knowledge_005",
+      "taxonomy": "Tool Selection",
+      "expected_tool": "graph_neighbor_expand",
+      "actual_tool": "hybrid_knowledge_search",
+      "reason": "Expected tool graph_neighbor_expand, but selected hybrid_knowledge_search."
+    },
+    {
+      "id": "hh_knowledge_006",
+      "taxonomy": "Router",
+      "expected_tool": "hybrid_knowledge_search",
+      "actual_tool": "workflow_state_transition",
+      "reason": "Expected scenario knowledge, but router selected workflow."
+    },
+    {
+      "id": "hh_knowledge_010",
+      "taxonomy": "Router",
+      "expected_tool": "hybrid_knowledge_search",
+      "actual_tool": "approval_gate",
+      "reason": "Expected scenario knowledge, but router selected workflow."
+    },
+    {
+      "id": "hh_knowledge_011",
+      "taxonomy": "Tool Selection",
+      "expected_tool": "graph_neighbor_expand",
+      "actual_tool": "incident_summary_reader",
+      "reason": "Expected tool graph_neighbor_expand, but selected incident_summary_reader."
+    },
+    {
+      "id": "hh_knowledge_012",
+      "taxonomy": "Tool Selection",
+      "expected_tool": "hybrid_knowledge_search",
+      "actual_tool": "generic_knowledge_lookup",
+      "reason": "Expected tool hybrid_knowledge_search, but selected generic_knowledge_lookup."
+    },
+    {
+      "id": "hh_knowledge_013",
+      "taxonomy": "Approval",
+      "expected_tool": "graph_neighbor_expand",
+      "actual_tool": "graph_neighbor_expand",
+      "reason": "Expected approval=False, actual approval=True."
+    },
+    {
+      "id": "hh_knowledge_018",
+      "taxonomy": "Tool Selection",
+      "expected_tool": "hybrid_knowledge_search",
+      "actual_tool": "policy_faq_search",
+      "reason": "Expected tool hybrid_knowledge_search, but selected policy_faq_search."
+    },
+    {
+      "id": "hh_knowledge_022",
+      "taxonomy": "Router",
+      "expected_tool": "hybrid_knowledge_search",
+      "actual_tool": "approval_gate",
+      "reason": "Expected scenario knowledge, but router selected workflow."
+    },
+    {
+      "id": "hh_knowledge_028",
+      "taxonomy": "Router",
+      "expected_tool": "hybrid_knowledge_search",
+      "actual_tool": "approval_gate",
+      "reason": "Expected scenario knowledge, but router selected workflow."
+    },
+    {
+      "id": "hh_workflow_009",
+      "taxonomy": "Tool Selection",
+      "expected_tool": "workflow_state_transition",
+      "actual_tool": "sla_reminder_bot",
+      "reason": "Expected tool workflow_state_transition, but selected sla_reminder_bot."
+    },
+    {
+      "id": "hh_workflow_010",
+      "taxonomy": "Tool Selection",
+      "expected_tool": "workflow_state_transition",
+      "actual_tool": "generic_workflow_update",
+      "reason": "Expected tool workflow_state_transition, but selected generic_workflow_update."
+    },
+    {
+      "id": "hh_workflow_014",
+      "taxonomy": "Tool Selection",
+      "expected_tool": "approval_gate",
+      "actual_tool": "generic_workflow_update",
+      "reason": "Expected tool approval_gate, but selected generic_workflow_update."
+    },
+    {
+      "id": "hh_workflow_016",
+      "taxonomy": "Tool Selection",
+      "expected_tool": "approval_gate",
+      "actual_tool": "workflow_state_transition",
+      "reason": "Expected tool approval_gate, but selected workflow_state_transition."
+    },
+    {
+      "id": "hh_workflow_018",
+      "taxonomy": "Router",
+      "expected_tool": "approval_gate",
+      "actual_tool": "crm_update_api",
+      "reason": "Expected scenario workflow, but router selected external_api."
+    },
+    {
+      "id": "hh_workflow_019",
+      "taxonomy": "Tool Selection",
+      "expected_tool": "approval_gate",
+      "actual_tool": "generic_workflow_update",
+      "reason": "Expected tool approval_gate, but selected generic_workflow_update."
+    },
+    {
+      "id": "hh_workflow_020",
+      "taxonomy": "Router",
+      "expected_tool": "approval_gate",
+      "actual_tool": "http_api_connector",
+      "reason": "Expected scenario workflow, but router selected external_api."
+    },
+    {
+      "id": "hh_workflow_024",
+      "taxonomy": "Tool Selection",
+      "expected_tool": "approval_gate",
+      "actual_tool": "workflow_form_submit",
+      "reason": "Expected tool approval_gate, but selected workflow_form_submit."
+    },
+    {
+      "id": "hh_workflow_028",
+      "taxonomy": "Tool Selection",
+      "expected_tool": "approval_gate",
+      "actual_tool": "generic_workflow_update",
+      "reason": "Expected tool approval_gate, but selected generic_workflow_update."
+    },
+    {
+      "id": "hh_workflow_030",
+      "taxonomy": "Tool Selection",
+      "expected_tool": "approval_gate",
+      "actual_tool": "workflow_state_transition",
+      "reason": "Expected tool approval_gate, but selected workflow_state_transition."
+    },
+    {
+      "id": "hh_code_002",
+      "taxonomy": "Tool Selection",
+      "expected_tool": "python_sandbox_runner",
+      "actual_tool": "notebook_runner",
+      "reason": "Expected tool python_sandbox_runner, but selected notebook_runner."
+    },
+    {
+      "id": "hh_code_006",
+      "taxonomy": "Tool Selection",
+      "expected_tool": "python_sandbox_runner",
+      "actual_tool": "shell_script_runner",
+      "reason": "Expected tool python_sandbox_runner, but selected shell_script_runner."
+    },
+    {
+      "id": "hh_code_017",
+      "taxonomy": "Tool Selection",
+      "expected_tool": "python_sandbox_runner",
+      "actual_tool": "shell_script_runner",
+      "reason": "Expected tool python_sandbox_runner, but selected shell_script_runner."
+    },
+    {
+      "id": "hh_code_018",
+      "taxonomy": "Tool Selection",
+      "expected_tool": "python_sandbox_runner",
+      "actual_tool": "shell_script_runner",
+      "reason": "Expected tool python_sandbox_runner, but selected shell_script_runner."
+    },
+    {
+      "id": "hh_code_028",
+      "taxonomy": "Tool Selection",
+      "expected_tool": "python_sandbox_runner",
+      "actual_tool": "shell_script_runner",
+      "reason": "Expected tool python_sandbox_runner, but selected shell_script_runner."
+    },
+    {
+      "id": "hh_analysis_001",
+      "taxonomy": "Tool Selection",
+      "expected_tool": "data_frame_profiler",
+      "actual_tool": "csv_summary",
+      "reason": "Expected tool data_frame_profiler, but selected csv_summary."
+    },
+    {
+      "id": "hh_analysis_002",
+      "taxonomy": "Tool Selection",
+      "expected_tool": "data_frame_profiler",
+      "actual_tool": "dashboard_summary_tool",
+      "reason": "Expected tool data_frame_profiler, but selected dashboard_summary_tool."
+    },
+    {
+      "id": "hh_analysis_003",
+      "taxonomy": "Tool Selection",
+      "expected_tool": "data_frame_profiler",
+      "actual_tool": "data_quality_checker",
+      "reason": "Expected tool data_frame_profiler, but selected data_quality_checker."
+    },
+    {
+      "id": "hh_analysis_004",
+      "taxonomy": "Tool Selection",
+      "expected_tool": "data_frame_profiler",
+      "actual_tool": "data_quality_checker",
+      "reason": "Expected tool data_frame_profiler, but selected data_quality_checker."
+    },
+    {
+      "id": "hh_analysis_005",
+      "taxonomy": "Tool Selection",
+      "expected_tool": "data_frame_profiler",
+      "actual_tool": "data_quality_checker",
+      "reason": "Expected tool data_frame_profiler, but selected data_quality_checker."
+    },
+    {
+      "id": "hh_analysis_006",
+      "taxonomy": "Tool Selection",
+      "expected_tool": "data_frame_profiler",
+      "actual_tool": "csv_summary",
+      "reason": "Expected tool data_frame_profiler, but selected csv_summary."
+    }
+  ],
+  "cases_file": "cases.json"
+}

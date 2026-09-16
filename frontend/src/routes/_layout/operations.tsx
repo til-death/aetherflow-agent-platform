@@ -36,7 +36,7 @@ export const Route = createFileRoute("/_layout/operations")({
       throw redirect({ to: "/" })
     }
   },
-  head: () => ({ meta: [{ title: "运营总览 - AetherFlow" }] }),
+  head: () => ({ meta: [{ title: "运营总览 - 稳流" }] }),
 })
 
 function Operations() {

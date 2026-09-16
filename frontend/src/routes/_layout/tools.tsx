@@ -23,7 +23,7 @@ import { formatPercent, riskClass, riskLabel, scenarioLabel } from "@/lib/aether
 
 export const Route = createFileRoute("/_layout/tools")({
   component: Tools,
-  head: () => ({ meta: [{ title: "工具注册表 - AetherFlow" }] }),
+  head: () => ({ meta: [{ title: "工具注册表 - 稳流" }] }),
 })
 
 const policies = [

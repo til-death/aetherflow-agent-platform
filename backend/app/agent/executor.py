@@ -39,6 +39,7 @@ def execute_tool(
         "graph_node_count": len(graph),
         "dry_run": tool_name in {"python_sandbox_runner", "http_api_connector", "approval_gate"},
         "real_tool": tool_name != "memory_write_policy",
+        "recovery_required": False,
     }
 
 
@@ -51,7 +52,8 @@ def _execute_data_frame_profiler(
     expected_output_missing = not task.expected_output
     if not profile["csv_detected"]:
         confidence = max(0.45, evidence["score"] - 0.18)
-        summary = "未检测到可解析的 CSV 内容，因此返回输入契约提醒，没有生成数据画像。"
+        summary = "未检测到可解析的 CSV 内容，已暂停分析并请求补充数据后重试。"
+        recovery_required = True
     else:
         confidence = max(0.72, min(0.96, evidence["score"] + 0.08))
         summary = (
@@ -60,6 +62,7 @@ def _execute_data_frame_profiler(
             f"数值列 {len(profile['numeric_summary'])} 个；"
             f"异常提示 {len(profile['anomaly_hints'])} 条。"
         )
+        recovery_required = False
 
     return {
         "summary": summary,
@@ -70,6 +73,8 @@ def _execute_data_frame_profiler(
         "dry_run": True,
         "real_tool": True,
         "profile": profile,
+        "recovery_required": recovery_required,
+        "recovery_action": "补充CSV文件后重试数据画像分析" if recovery_required else None,
     }
 
 

@@ -277,7 +277,14 @@ export const catchErrorCodes = (options: ApiRequestOptions, result: ApiResult): 
 
 	const error = errors[result.status];
 	if (error) {
-		throw new ApiError(options, result, error);
+		const body = result.body as { detail?: unknown } | undefined;
+		const detail = body?.detail;
+		const detailMessage = Array.isArray(detail)
+			? detail.map(item => (item && typeof item === 'object' && 'msg' in item ? String(item.msg) : String(item))).join('; ')
+			: typeof detail === 'string'
+				? detail
+				: undefined;
+		throw new ApiError(options, result, `${detailMessage || error} [${result.status} ${result.url}]`);
 	}
 
 	if (!result.ok) {

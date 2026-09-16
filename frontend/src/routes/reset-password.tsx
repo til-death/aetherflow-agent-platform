@@ -60,7 +60,7 @@ export const Route = createFileRoute("/reset-password")({
   head: () => ({
     meta: [
       {
-        title: "Reset Password - AetherFlow",
+        title: "Reset Password - 稳流",
       },
     ],
   }),

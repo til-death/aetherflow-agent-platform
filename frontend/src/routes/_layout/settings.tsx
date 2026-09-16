@@ -17,7 +17,7 @@ export const Route = createFileRoute("/_layout/settings")({
   head: () => ({
     meta: [
       {
-        title: "Settings - AetherFlow",
+        title: "Settings - 稳流",
       },
     ],
   }),
@@ -38,7 +38,7 @@ function UserSettings() {
         <div className="page-kicker">Account</div>
         <h1 className="page-title text-3xl md:text-4xl">User settings</h1>
         <p className="mt-3 max-w-2xl text-base leading-7 text-muted-foreground">
-          Manage your AetherFlow account settings and preferences
+          Manage your 稳流 account settings and preferences
         </p>
       </div>
 

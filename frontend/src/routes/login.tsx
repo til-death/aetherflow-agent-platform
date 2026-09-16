@@ -44,7 +44,7 @@ export const Route = createFileRoute("/login")({
   head: () => ({
     meta: [
       {
-        title: "Log In - AetherFlow",
+        title: "Log In - 稳流",
       },
     ],
   }),

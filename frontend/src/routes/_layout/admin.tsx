@@ -29,7 +29,7 @@ export const Route = createFileRoute("/_layout/admin")({
   head: () => ({
     meta: [
       {
-        title: "成员管理 - AetherFlow",
+        title: "成员管理 - 稳流",
       },
     ],
   }),

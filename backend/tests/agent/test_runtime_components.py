@@ -10,7 +10,13 @@ from app.agent.evaluation import (
 from app.agent.executor import profile_csv_payload
 from app.agent.planner import rule_execution_graph
 from app.agent.schemas import ExecutionGraphPlan
-from app.agent.tool_registry import TOOLS, classify_scenario, rank_tools, task_text
+from app.agent.tool_registry import (
+    TOOLS,
+    assess_tool_decision,
+    classify_scenario,
+    rank_tools,
+    task_text,
+)
 from app.agent.validators import AgentValidationError, validate_execution_plan
 
 
@@ -155,3 +161,44 @@ def test_dynamic_tool_metadata_breaks_general_scenario_ties() -> None:
     ranked = rank_tools(task_text(task), "general", tools=tools)
 
     assert ranked[0]["name"] == "toolluban_preference_extractor"
+
+
+def test_tool_policy_abstains_when_top_candidates_are_too_close() -> None:
+    ranked = [
+        {"name": "data_frame_profiler", "score": 0.74, "scenario": "analysis"},
+        {"name": "csv_summary", "score": 0.72, "scenario": "analysis"},
+    ]
+
+    decision = assess_tool_decision("分析 csv 表格中的异常", "analysis", ranked)
+
+    assert decision["decision"] == "abstain"
+    assert "small_top1_margin" in decision["reasons"]
+
+
+def test_tool_policy_keeps_high_evidence_candidate_when_margin_is_small() -> None:
+    ranked = [
+        {"name": "weather_lookup", "score": 1.05, "scenario": "general"},
+        {"name": "weather_forecast", "score": 1.03, "scenario": "general"},
+    ]
+
+    decision = assess_tool_decision("查询北京天气", "general", ranked)
+
+    assert decision["decision"] == "execute"
+    assert "small_top1_margin" not in decision["reasons"]
+
+
+def test_tool_policy_abstains_when_capability_boundary_conflicts() -> None:
+    ranked = [
+        {
+            "name": "csv_summary",
+            "score": 0.82,
+            "scenario": "analysis",
+            "exclusion_matches": ["仅支持汇总"],
+        },
+        {"name": "data_frame_profiler", "score": 0.70, "scenario": "analysis"},
+    ]
+
+    decision = assess_tool_decision("定位 csv 中的异常记录", "analysis", ranked)
+
+    assert decision["decision"] == "abstain"
+    assert "tool_boundary_conflict" in decision["reasons"]

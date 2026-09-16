@@ -66,7 +66,7 @@ import {
 
 export const Route = createFileRoute("/_layout/evaluation")({
   component: Evaluation,
-  head: () => ({ meta: [{ title: "评估工作台 - AetherFlow" }] }),
+  head: () => ({ meta: [{ title: "评估工作台 - 稳流" }] }),
 })
 
 function Evaluation() {

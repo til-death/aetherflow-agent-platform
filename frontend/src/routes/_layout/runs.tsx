@@ -21,7 +21,7 @@ import { formatScore, riskClass, riskLabel, scenarioLabel, statusClass, statusLa
 
 export const Route = createFileRoute("/_layout/runs")({
   component: Runs,
-  head: () => ({ meta: [{ title: "处理中心 - AetherFlow" }] }),
+  head: () => ({ meta: [{ title: "处理中心 - 稳流" }] }),
 })
 
 type RunFilter = "all" | "needs_human" | "succeeded" | "recovered" | "failed"

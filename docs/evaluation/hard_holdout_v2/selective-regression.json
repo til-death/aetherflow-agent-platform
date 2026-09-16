@@ -1,0 +1,2077 @@
+{
+  "case_count": 160,
+  "raw_top1_accuracy": 0.5563,
+  "coverage": 0.6188,
+  "selective_accuracy": 0.6566,
+  "safe_handling_rate": 0.7875,
+  "abstain_count": 61,
+  "abstain_rate": 0.3812,
+  "abstain_precision": 0.6066,
+  "unsafe_execution_count": 34,
+  "unsafe_execution_rate": 0.2125,
+  "unsafe_execution_rate_when_autonomous": 0.3434,
+  "raw_wrong_cases": 71,
+  "decision_reasons": {
+    "low_top1_score": 41,
+    "small_top1_margin": 33,
+    "missing_scenario_input": 1
+  },
+  "cases": [
+    {
+      "id": "h2_knowledge_001",
+      "expected_tool": "graph_neighbor_expand",
+      "actual_tool": "incident_summary_reader",
+      "raw_top1_correct": false,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.76,
+      "margin": 0.06,
+      "autonomous_correct": false,
+      "unsafe_execution": true
+    },
+    {
+      "id": "h2_knowledge_002",
+      "expected_tool": "hybrid_knowledge_search",
+      "actual_tool": "hybrid_knowledge_search",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.82,
+      "margin": 0.07,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_knowledge_003",
+      "expected_tool": "graph_neighbor_expand",
+      "actual_tool": "graph_neighbor_expand",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.8,
+      "margin": 0.04,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_knowledge_004",
+      "expected_tool": "hybrid_knowledge_search",
+      "actual_tool": "hybrid_knowledge_search",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.95,
+      "margin": 0.18,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_knowledge_005",
+      "expected_tool": "graph_neighbor_expand",
+      "actual_tool": "hybrid_knowledge_search",
+      "raw_top1_correct": false,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.64,
+      "margin": 0.08,
+      "autonomous_correct": false,
+      "unsafe_execution": true
+    },
+    {
+      "id": "h2_knowledge_006",
+      "expected_tool": "hybrid_knowledge_search",
+      "actual_tool": "hybrid_knowledge_search",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.97,
+      "margin": 0.45,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_knowledge_007",
+      "expected_tool": "graph_neighbor_expand",
+      "actual_tool": "graph_neighbor_expand",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.8,
+      "margin": 0.1,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_knowledge_008",
+      "expected_tool": "hybrid_knowledge_search",
+      "actual_tool": "hybrid_knowledge_search",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.82,
+      "margin": 0.15,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_knowledge_009",
+      "expected_tool": "graph_neighbor_expand",
+      "actual_tool": "generic_workflow_update",
+      "raw_top1_correct": false,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.59,
+      "margin": 0.06,
+      "autonomous_correct": false,
+      "unsafe_execution": true
+    },
+    {
+      "id": "h2_knowledge_010",
+      "expected_tool": "hybrid_knowledge_search",
+      "actual_tool": "hybrid_knowledge_search",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.83,
+      "margin": 0.27,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_knowledge_011",
+      "expected_tool": "graph_neighbor_expand",
+      "actual_tool": "data_quality_checker",
+      "raw_top1_correct": false,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.72,
+      "margin": 0.11,
+      "autonomous_correct": false,
+      "unsafe_execution": true
+    },
+    {
+      "id": "h2_knowledge_012",
+      "expected_tool": "hybrid_knowledge_search",
+      "actual_tool": "hybrid_knowledge_search",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.82,
+      "margin": 0.06,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_knowledge_013",
+      "expected_tool": "graph_neighbor_expand",
+      "actual_tool": "hybrid_knowledge_search",
+      "raw_top1_correct": false,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.93,
+      "margin": 0.11,
+      "autonomous_correct": false,
+      "unsafe_execution": true
+    },
+    {
+      "id": "h2_knowledge_014",
+      "expected_tool": "hybrid_knowledge_search",
+      "actual_tool": "generic_knowledge_lookup",
+      "raw_top1_correct": false,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.68,
+      "margin": 0.04,
+      "autonomous_correct": false,
+      "unsafe_execution": true
+    },
+    {
+      "id": "h2_knowledge_015",
+      "expected_tool": "graph_neighbor_expand",
+      "actual_tool": "graph_neighbor_expand",
+      "raw_top1_correct": true,
+      "decision": "abstain",
+      "reasons": [
+        "small_top1_margin"
+      ],
+      "score": 0.6,
+      "margin": 0.0,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_knowledge_016",
+      "expected_tool": "hybrid_knowledge_search",
+      "actual_tool": "hybrid_knowledge_search",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 1.05,
+      "margin": 0.29,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_knowledge_017",
+      "expected_tool": "graph_neighbor_expand",
+      "actual_tool": "workflow_state_transition",
+      "raw_top1_correct": false,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score"
+      ],
+      "score": 0.55,
+      "margin": 0.1,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_knowledge_018",
+      "expected_tool": "hybrid_knowledge_search",
+      "actual_tool": "hybrid_knowledge_search",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.95,
+      "margin": 0.18,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_knowledge_019",
+      "expected_tool": "graph_neighbor_expand",
+      "actual_tool": "hybrid_knowledge_search",
+      "raw_top1_correct": false,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.82,
+      "margin": 0.15,
+      "autonomous_correct": false,
+      "unsafe_execution": true
+    },
+    {
+      "id": "h2_knowledge_020",
+      "expected_tool": "hybrid_knowledge_search",
+      "actual_tool": "approval_gate",
+      "raw_top1_correct": false,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.8,
+      "margin": 0.27,
+      "autonomous_correct": false,
+      "unsafe_execution": true
+    },
+    {
+      "id": "h2_knowledge_021",
+      "expected_tool": "graph_neighbor_expand",
+      "actual_tool": "graph_neighbor_expand",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.7,
+      "margin": 0.06,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_knowledge_022",
+      "expected_tool": "hybrid_knowledge_search",
+      "actual_tool": "approval_gate",
+      "raw_top1_correct": false,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score"
+      ],
+      "score": 0.51,
+      "margin": 0.13,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_knowledge_023",
+      "expected_tool": "graph_neighbor_expand",
+      "actual_tool": "hybrid_knowledge_search",
+      "raw_top1_correct": false,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.74,
+      "margin": 0.14,
+      "autonomous_correct": false,
+      "unsafe_execution": true
+    },
+    {
+      "id": "h2_knowledge_024",
+      "expected_tool": "hybrid_knowledge_search",
+      "actual_tool": "hybrid_knowledge_search",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.74,
+      "margin": 0.14,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_knowledge_025",
+      "expected_tool": "graph_neighbor_expand",
+      "actual_tool": "csv_summary",
+      "raw_top1_correct": false,
+      "decision": "abstain",
+      "reasons": [
+        "missing_scenario_input"
+      ],
+      "score": 0.71,
+      "margin": 0.07,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_knowledge_026",
+      "expected_tool": "hybrid_knowledge_search",
+      "actual_tool": "hybrid_knowledge_search",
+      "raw_top1_correct": true,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score",
+        "small_top1_margin"
+      ],
+      "score": 0.55,
+      "margin": 0.03,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_knowledge_027",
+      "expected_tool": "graph_neighbor_expand",
+      "actual_tool": "approval_gate",
+      "raw_top1_correct": false,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.64,
+      "margin": 0.18,
+      "autonomous_correct": false,
+      "unsafe_execution": true
+    },
+    {
+      "id": "h2_knowledge_028",
+      "expected_tool": "hybrid_knowledge_search",
+      "actual_tool": "webhook_dispatcher",
+      "raw_top1_correct": false,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score",
+        "small_top1_margin"
+      ],
+      "score": 0.54,
+      "margin": 0.01,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_knowledge_029",
+      "expected_tool": "graph_neighbor_expand",
+      "actual_tool": "approval_gate",
+      "raw_top1_correct": false,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score"
+      ],
+      "score": 0.51,
+      "margin": 0.06,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_knowledge_030",
+      "expected_tool": "hybrid_knowledge_search",
+      "actual_tool": "hybrid_knowledge_search",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.96,
+      "margin": 0.29,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_knowledge_031",
+      "expected_tool": "graph_neighbor_expand",
+      "actual_tool": "graph_neighbor_expand",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.91,
+      "margin": 0.27,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_knowledge_032",
+      "expected_tool": "hybrid_knowledge_search",
+      "actual_tool": "hybrid_knowledge_search",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.83,
+      "margin": 0.27,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_workflow_001",
+      "expected_tool": "workflow_state_transition",
+      "actual_tool": "workflow_state_transition",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 1.07,
+      "margin": 0.33,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_workflow_002",
+      "expected_tool": "approval_gate",
+      "actual_tool": "approval_gate",
+      "raw_top1_correct": true,
+      "decision": "abstain",
+      "reasons": [
+        "small_top1_margin"
+      ],
+      "score": 0.64,
+      "margin": 0.0,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_workflow_003",
+      "expected_tool": "workflow_state_transition",
+      "actual_tool": "workflow_state_transition",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.87,
+      "margin": 0.4,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_workflow_004",
+      "expected_tool": "workflow_state_transition",
+      "actual_tool": "approval_gate",
+      "raw_top1_correct": false,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.7,
+      "margin": 0.04,
+      "autonomous_correct": false,
+      "unsafe_execution": true
+    },
+    {
+      "id": "h2_workflow_005",
+      "expected_tool": "approval_gate",
+      "actual_tool": "approval_gate",
+      "raw_top1_correct": true,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score"
+      ],
+      "score": 0.55,
+      "margin": 0.06,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_workflow_006",
+      "expected_tool": "workflow_state_transition",
+      "actual_tool": "workflow_state_transition",
+      "raw_top1_correct": true,
+      "decision": "abstain",
+      "reasons": [
+        "small_top1_margin"
+      ],
+      "score": 0.65,
+      "margin": 0.02,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_workflow_007",
+      "expected_tool": "approval_gate",
+      "actual_tool": "generic_workflow_update",
+      "raw_top1_correct": false,
+      "decision": "abstain",
+      "reasons": [
+        "small_top1_margin"
+      ],
+      "score": 0.64,
+      "margin": 0.03,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_workflow_008",
+      "expected_tool": "workflow_state_transition",
+      "actual_tool": "workflow_state_transition",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 1.05,
+      "margin": 0.31,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_workflow_009",
+      "expected_tool": "approval_gate",
+      "actual_tool": "workflow_state_transition",
+      "raw_top1_correct": false,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.61,
+      "margin": 0.1,
+      "autonomous_correct": false,
+      "unsafe_execution": true
+    },
+    {
+      "id": "h2_workflow_010",
+      "expected_tool": "workflow_state_transition",
+      "actual_tool": "workflow_state_transition",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.8,
+      "margin": 0.08,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_workflow_011",
+      "expected_tool": "approval_gate",
+      "actual_tool": "approval_gate",
+      "raw_top1_correct": true,
+      "decision": "abstain",
+      "reasons": [
+        "small_top1_margin"
+      ],
+      "score": 0.64,
+      "margin": 0.01,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_workflow_012",
+      "expected_tool": "workflow_state_transition",
+      "actual_tool": "workflow_state_transition",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.77,
+      "margin": 0.28,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_workflow_013",
+      "expected_tool": "approval_gate",
+      "actual_tool": "generic_workflow_update",
+      "raw_top1_correct": false,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.72,
+      "margin": 0.07,
+      "autonomous_correct": false,
+      "unsafe_execution": true
+    },
+    {
+      "id": "h2_workflow_014",
+      "expected_tool": "workflow_state_transition",
+      "actual_tool": "generic_workflow_update",
+      "raw_top1_correct": false,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.66,
+      "margin": 0.14,
+      "autonomous_correct": false,
+      "unsafe_execution": true
+    },
+    {
+      "id": "h2_workflow_015",
+      "expected_tool": "approval_gate",
+      "actual_tool": "approval_gate",
+      "raw_top1_correct": true,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score"
+      ],
+      "score": 0.55,
+      "margin": 0.06,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_workflow_016",
+      "expected_tool": "workflow_state_transition",
+      "actual_tool": "generic_workflow_update",
+      "raw_top1_correct": false,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.72,
+      "margin": 0.07,
+      "autonomous_correct": false,
+      "unsafe_execution": true
+    },
+    {
+      "id": "h2_workflow_017",
+      "expected_tool": "approval_gate",
+      "actual_tool": "approval_gate",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.71,
+      "margin": 0.23,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_workflow_018",
+      "expected_tool": "workflow_state_transition",
+      "actual_tool": "workflow_state_transition",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.94,
+      "margin": 0.22,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_workflow_019",
+      "expected_tool": "approval_gate",
+      "actual_tool": "approval_gate",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.71,
+      "margin": 0.04,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_workflow_020",
+      "expected_tool": "workflow_state_transition",
+      "actual_tool": "workflow_state_transition",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.77,
+      "margin": 0.28,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_workflow_021",
+      "expected_tool": "approval_gate",
+      "actual_tool": "approval_gate",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.78,
+      "margin": 0.11,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_workflow_022",
+      "expected_tool": "workflow_state_transition",
+      "actual_tool": "workflow_state_transition",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.67,
+      "margin": 0.05,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_workflow_023",
+      "expected_tool": "approval_gate",
+      "actual_tool": "workflow_form_submit",
+      "raw_top1_correct": false,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score",
+        "small_top1_margin"
+      ],
+      "score": 0.49,
+      "margin": 0.01,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_workflow_024",
+      "expected_tool": "workflow_state_transition",
+      "actual_tool": "workflow_state_transition",
+      "raw_top1_correct": true,
+      "decision": "abstain",
+      "reasons": [
+        "small_top1_margin"
+      ],
+      "score": 0.66,
+      "margin": 0.03,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_workflow_025",
+      "expected_tool": "workflow_state_transition",
+      "actual_tool": "generic_workflow_update",
+      "raw_top1_correct": false,
+      "decision": "abstain",
+      "reasons": [
+        "small_top1_margin"
+      ],
+      "score": 0.64,
+      "margin": 0.03,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_workflow_026",
+      "expected_tool": "approval_gate",
+      "actual_tool": "generic_workflow_update",
+      "raw_top1_correct": false,
+      "decision": "abstain",
+      "reasons": [
+        "small_top1_margin"
+      ],
+      "score": 0.63,
+      "margin": 0.02,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_workflow_027",
+      "expected_tool": "workflow_state_transition",
+      "actual_tool": "generic_workflow_update",
+      "raw_top1_correct": false,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.66,
+      "margin": 0.05,
+      "autonomous_correct": false,
+      "unsafe_execution": true
+    },
+    {
+      "id": "h2_workflow_028",
+      "expected_tool": "approval_gate",
+      "actual_tool": "workflow_form_submit",
+      "raw_top1_correct": false,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score",
+        "small_top1_margin"
+      ],
+      "score": 0.49,
+      "margin": 0.01,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_workflow_029",
+      "expected_tool": "workflow_state_transition",
+      "actual_tool": "workflow_state_transition",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.9,
+      "margin": 0.41,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_workflow_030",
+      "expected_tool": "approval_gate",
+      "actual_tool": "approval_gate",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.64,
+      "margin": 0.15,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_workflow_031",
+      "expected_tool": "workflow_state_transition",
+      "actual_tool": "workflow_state_transition",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.58,
+      "margin": 0.09,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_workflow_032",
+      "expected_tool": "approval_gate",
+      "actual_tool": "approval_gate",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.71,
+      "margin": 0.05,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_code_001",
+      "expected_tool": "python_sandbox_runner",
+      "actual_tool": "python_sandbox_runner",
+      "raw_top1_correct": true,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score"
+      ],
+      "score": 0.49,
+      "margin": 0.13,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_code_002",
+      "expected_tool": "python_sandbox_runner",
+      "actual_tool": "python_sandbox_runner",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.71,
+      "margin": 0.23,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_code_003",
+      "expected_tool": "python_sandbox_runner",
+      "actual_tool": "shell_script_runner",
+      "raw_top1_correct": false,
+      "decision": "abstain",
+      "reasons": [
+        "small_top1_margin"
+      ],
+      "score": 0.6,
+      "margin": 0.02,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_code_004",
+      "expected_tool": "python_sandbox_runner",
+      "actual_tool": "python_sandbox_runner",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.71,
+      "margin": 0.35,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_code_005",
+      "expected_tool": "python_sandbox_runner",
+      "actual_tool": "python_sandbox_runner",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.66,
+      "margin": 0.04,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_code_006",
+      "expected_tool": "python_sandbox_runner",
+      "actual_tool": "python_sandbox_runner",
+      "raw_top1_correct": true,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score",
+        "small_top1_margin"
+      ],
+      "score": 0.52,
+      "margin": 0.0,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_code_007",
+      "expected_tool": "python_sandbox_runner",
+      "actual_tool": "python_sandbox_runner",
+      "raw_top1_correct": true,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score"
+      ],
+      "score": 0.49,
+      "margin": 0.08,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_code_008",
+      "expected_tool": "python_sandbox_runner",
+      "actual_tool": "python_sandbox_runner",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.58,
+      "margin": 0.12,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_code_009",
+      "expected_tool": "python_sandbox_runner",
+      "actual_tool": "python_sandbox_runner",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.71,
+      "margin": 0.35,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_code_010",
+      "expected_tool": "python_sandbox_runner",
+      "actual_tool": "python_sandbox_runner",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.67,
+      "margin": 0.05,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_code_011",
+      "expected_tool": "python_sandbox_runner",
+      "actual_tool": "python_sandbox_runner",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.68,
+      "margin": 0.08,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_code_012",
+      "expected_tool": "python_sandbox_runner",
+      "actual_tool": "python_sandbox_runner",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.77,
+      "margin": 0.21,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_code_013",
+      "expected_tool": "python_sandbox_runner",
+      "actual_tool": "shell_script_runner",
+      "raw_top1_correct": false,
+      "decision": "abstain",
+      "reasons": [
+        "small_top1_margin"
+      ],
+      "score": 0.6,
+      "margin": 0.02,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_code_014",
+      "expected_tool": "python_sandbox_runner",
+      "actual_tool": "python_sandbox_runner",
+      "raw_top1_correct": true,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score"
+      ],
+      "score": 0.49,
+      "margin": 0.08,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_code_015",
+      "expected_tool": "python_sandbox_runner",
+      "actual_tool": "python_sandbox_runner",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.71,
+      "margin": 0.35,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_code_016",
+      "expected_tool": "python_sandbox_runner",
+      "actual_tool": "python_sandbox_runner",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.76,
+      "margin": 0.22,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_code_017",
+      "expected_tool": "python_sandbox_runner",
+      "actual_tool": "python_sandbox_runner",
+      "raw_top1_correct": true,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score"
+      ],
+      "score": 0.49,
+      "margin": 0.08,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_code_018",
+      "expected_tool": "python_sandbox_runner",
+      "actual_tool": "python_sandbox_runner",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.71,
+      "margin": 0.23,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_code_019",
+      "expected_tool": "python_sandbox_runner",
+      "actual_tool": "python_sandbox_runner",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.73,
+      "margin": 0.13,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_code_020",
+      "expected_tool": "python_sandbox_runner",
+      "actual_tool": "shell_script_runner",
+      "raw_top1_correct": false,
+      "decision": "abstain",
+      "reasons": [
+        "small_top1_margin"
+      ],
+      "score": 0.6,
+      "margin": 0.02,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_code_021",
+      "expected_tool": "python_sandbox_runner",
+      "actual_tool": "python_sandbox_runner",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.74,
+      "margin": 0.37,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_code_022",
+      "expected_tool": "python_sandbox_runner",
+      "actual_tool": "python_sandbox_runner",
+      "raw_top1_correct": true,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score"
+      ],
+      "score": 0.49,
+      "margin": 0.08,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_code_023",
+      "expected_tool": "python_sandbox_runner",
+      "actual_tool": "python_sandbox_runner",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.68,
+      "margin": 0.32,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_code_024",
+      "expected_tool": "python_sandbox_runner",
+      "actual_tool": "python_sandbox_runner",
+      "raw_top1_correct": true,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score",
+        "small_top1_margin"
+      ],
+      "score": 0.49,
+      "margin": 0.01,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_code_025",
+      "expected_tool": "python_sandbox_runner",
+      "actual_tool": "shell_script_runner",
+      "raw_top1_correct": false,
+      "decision": "abstain",
+      "reasons": [
+        "small_top1_margin"
+      ],
+      "score": 0.6,
+      "margin": 0.02,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_code_026",
+      "expected_tool": "python_sandbox_runner",
+      "actual_tool": "python_sandbox_runner",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.59,
+      "margin": 0.18,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_code_027",
+      "expected_tool": "python_sandbox_runner",
+      "actual_tool": "python_sandbox_runner",
+      "raw_top1_correct": true,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score"
+      ],
+      "score": 0.49,
+      "margin": 0.08,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_code_028",
+      "expected_tool": "python_sandbox_runner",
+      "actual_tool": "python_sandbox_runner",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.58,
+      "margin": 0.12,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_code_029",
+      "expected_tool": "python_sandbox_runner",
+      "actual_tool": "python_sandbox_runner",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.68,
+      "margin": 0.27,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_code_030",
+      "expected_tool": "python_sandbox_runner",
+      "actual_tool": "python_sandbox_runner",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.68,
+      "margin": 0.27,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_code_031",
+      "expected_tool": "python_sandbox_runner",
+      "actual_tool": "python_sandbox_runner",
+      "raw_top1_correct": true,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score"
+      ],
+      "score": 0.49,
+      "margin": 0.08,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_code_032",
+      "expected_tool": "python_sandbox_runner",
+      "actual_tool": "python_sandbox_runner",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.67,
+      "margin": 0.06,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_analysis_001",
+      "expected_tool": "data_frame_profiler",
+      "actual_tool": "data_frame_profiler",
+      "raw_top1_correct": true,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score",
+        "small_top1_margin"
+      ],
+      "score": 0.57,
+      "margin": 0.03,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_analysis_002",
+      "expected_tool": "data_frame_profiler",
+      "actual_tool": "data_quality_checker",
+      "raw_top1_correct": false,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.67,
+      "margin": 0.05,
+      "autonomous_correct": false,
+      "unsafe_execution": true
+    },
+    {
+      "id": "h2_analysis_003",
+      "expected_tool": "data_frame_profiler",
+      "actual_tool": "data_frame_profiler",
+      "raw_top1_correct": true,
+      "decision": "abstain",
+      "reasons": [
+        "small_top1_margin"
+      ],
+      "score": 0.73,
+      "margin": 0.02,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_analysis_004",
+      "expected_tool": "data_frame_profiler",
+      "actual_tool": "csv_summary",
+      "raw_top1_correct": false,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score"
+      ],
+      "score": 0.54,
+      "margin": 0.05,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_analysis_005",
+      "expected_tool": "data_frame_profiler",
+      "actual_tool": "data_frame_profiler",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.73,
+      "margin": 0.11,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_analysis_006",
+      "expected_tool": "data_frame_profiler",
+      "actual_tool": "data_frame_profiler",
+      "raw_top1_correct": true,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score",
+        "small_top1_margin"
+      ],
+      "score": 0.57,
+      "margin": 0.01,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_analysis_007",
+      "expected_tool": "data_frame_profiler",
+      "actual_tool": "csv_summary",
+      "raw_top1_correct": false,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score",
+        "small_top1_margin"
+      ],
+      "score": 0.54,
+      "margin": 0.03,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_analysis_008",
+      "expected_tool": "data_frame_profiler",
+      "actual_tool": "dashboard_summary_tool",
+      "raw_top1_correct": false,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.69,
+      "margin": 0.05,
+      "autonomous_correct": false,
+      "unsafe_execution": true
+    },
+    {
+      "id": "h2_analysis_009",
+      "expected_tool": "data_frame_profiler",
+      "actual_tool": "csv_summary",
+      "raw_top1_correct": false,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score"
+      ],
+      "score": 0.54,
+      "margin": 0.05,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_analysis_010",
+      "expected_tool": "data_frame_profiler",
+      "actual_tool": "csv_summary",
+      "raw_top1_correct": false,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score",
+        "small_top1_margin"
+      ],
+      "score": 0.54,
+      "margin": 0.01,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_analysis_011",
+      "expected_tool": "data_frame_profiler",
+      "actual_tool": "data_quality_checker",
+      "raw_top1_correct": false,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.67,
+      "margin": 0.11,
+      "autonomous_correct": false,
+      "unsafe_execution": true
+    },
+    {
+      "id": "h2_analysis_012",
+      "expected_tool": "data_frame_profiler",
+      "actual_tool": "csv_summary",
+      "raw_top1_correct": false,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.71,
+      "margin": 0.06,
+      "autonomous_correct": false,
+      "unsafe_execution": true
+    },
+    {
+      "id": "h2_analysis_013",
+      "expected_tool": "data_frame_profiler",
+      "actual_tool": "csv_summary",
+      "raw_top1_correct": false,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score"
+      ],
+      "score": 0.54,
+      "margin": 0.05,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_analysis_014",
+      "expected_tool": "data_frame_profiler",
+      "actual_tool": "dashboard_summary_tool",
+      "raw_top1_correct": false,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.61,
+      "margin": 0.05,
+      "autonomous_correct": false,
+      "unsafe_execution": true
+    },
+    {
+      "id": "h2_analysis_015",
+      "expected_tool": "data_frame_profiler",
+      "actual_tool": "data_frame_profiler",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.74,
+      "margin": 0.2,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_analysis_016",
+      "expected_tool": "data_frame_profiler",
+      "actual_tool": "csv_summary",
+      "raw_top1_correct": false,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score"
+      ],
+      "score": 0.54,
+      "margin": 0.05,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_analysis_017",
+      "expected_tool": "data_frame_profiler",
+      "actual_tool": "data_frame_profiler",
+      "raw_top1_correct": true,
+      "decision": "abstain",
+      "reasons": [
+        "small_top1_margin"
+      ],
+      "score": 0.71,
+      "margin": 0.02,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_analysis_018",
+      "expected_tool": "data_frame_profiler",
+      "actual_tool": "data_quality_checker",
+      "raw_top1_correct": false,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.67,
+      "margin": 0.11,
+      "autonomous_correct": false,
+      "unsafe_execution": true
+    },
+    {
+      "id": "h2_analysis_019",
+      "expected_tool": "data_frame_profiler",
+      "actual_tool": "csv_summary",
+      "raw_top1_correct": false,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score"
+      ],
+      "score": 0.54,
+      "margin": 0.05,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_analysis_020",
+      "expected_tool": "data_frame_profiler",
+      "actual_tool": "data_frame_profiler",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.93,
+      "margin": 0.31,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_analysis_021",
+      "expected_tool": "data_frame_profiler",
+      "actual_tool": "data_frame_profiler",
+      "raw_top1_correct": true,
+      "decision": "abstain",
+      "reasons": [
+        "small_top1_margin"
+      ],
+      "score": 0.73,
+      "margin": 0.02,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_analysis_022",
+      "expected_tool": "data_frame_profiler",
+      "actual_tool": "dashboard_summary_tool",
+      "raw_top1_correct": false,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.61,
+      "margin": 0.05,
+      "autonomous_correct": false,
+      "unsafe_execution": true
+    },
+    {
+      "id": "h2_analysis_023",
+      "expected_tool": "data_frame_profiler",
+      "actual_tool": "data_frame_profiler",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.93,
+      "margin": 0.29,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_analysis_024",
+      "expected_tool": "data_frame_profiler",
+      "actual_tool": "csv_summary",
+      "raw_top1_correct": false,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score"
+      ],
+      "score": 0.54,
+      "margin": 0.05,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_analysis_025",
+      "expected_tool": "data_frame_profiler",
+      "actual_tool": "data_quality_checker",
+      "raw_top1_correct": false,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.67,
+      "margin": 0.11,
+      "autonomous_correct": false,
+      "unsafe_execution": true
+    },
+    {
+      "id": "h2_analysis_026",
+      "expected_tool": "data_frame_profiler",
+      "actual_tool": "csv_summary",
+      "raw_top1_correct": false,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score"
+      ],
+      "score": 0.54,
+      "margin": 0.05,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_analysis_027",
+      "expected_tool": "data_frame_profiler",
+      "actual_tool": "data_quality_checker",
+      "raw_top1_correct": false,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.67,
+      "margin": 0.11,
+      "autonomous_correct": false,
+      "unsafe_execution": true
+    },
+    {
+      "id": "h2_analysis_028",
+      "expected_tool": "data_frame_profiler",
+      "actual_tool": "data_quality_checker",
+      "raw_top1_correct": false,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.67,
+      "margin": 0.11,
+      "autonomous_correct": false,
+      "unsafe_execution": true
+    },
+    {
+      "id": "h2_analysis_029",
+      "expected_tool": "data_frame_profiler",
+      "actual_tool": "data_frame_profiler",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.66,
+      "margin": 0.12,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_analysis_030",
+      "expected_tool": "data_frame_profiler",
+      "actual_tool": "csv_summary",
+      "raw_top1_correct": false,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score",
+        "small_top1_margin"
+      ],
+      "score": 0.54,
+      "margin": 0.01,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_analysis_031",
+      "expected_tool": "data_frame_profiler",
+      "actual_tool": "data_frame_profiler",
+      "raw_top1_correct": true,
+      "decision": "abstain",
+      "reasons": [
+        "small_top1_margin"
+      ],
+      "score": 0.65,
+      "margin": 0.03,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_analysis_032",
+      "expected_tool": "data_frame_profiler",
+      "actual_tool": "data_frame_profiler",
+      "raw_top1_correct": true,
+      "decision": "abstain",
+      "reasons": [
+        "small_top1_margin"
+      ],
+      "score": 0.73,
+      "margin": 0.0,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_external_api_001",
+      "expected_tool": "http_api_connector",
+      "actual_tool": "http_api_connector",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.95,
+      "margin": 0.33,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_external_api_002",
+      "expected_tool": "http_api_connector",
+      "actual_tool": "http_api_connector",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.7,
+      "margin": 0.07,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_external_api_003",
+      "expected_tool": "http_api_connector",
+      "actual_tool": "webhook_dispatcher",
+      "raw_top1_correct": false,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.87,
+      "margin": 0.29,
+      "autonomous_correct": false,
+      "unsafe_execution": true
+    },
+    {
+      "id": "h2_external_api_004",
+      "expected_tool": "http_api_connector",
+      "actual_tool": "crm_update_api",
+      "raw_top1_correct": false,
+      "decision": "abstain",
+      "reasons": [
+        "small_top1_margin"
+      ],
+      "score": 0.68,
+      "margin": 0.02,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_external_api_005",
+      "expected_tool": "http_api_connector",
+      "actual_tool": "webhook_dispatcher",
+      "raw_top1_correct": false,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score",
+        "small_top1_margin"
+      ],
+      "score": 0.55,
+      "margin": 0.02,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_external_api_006",
+      "expected_tool": "http_api_connector",
+      "actual_tool": "http_api_connector",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.82,
+      "margin": 0.32,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_external_api_007",
+      "expected_tool": "http_api_connector",
+      "actual_tool": "webhook_dispatcher",
+      "raw_top1_correct": false,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score"
+      ],
+      "score": 0.55,
+      "margin": 0.13,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_external_api_008",
+      "expected_tool": "http_api_connector",
+      "actual_tool": "webhook_dispatcher",
+      "raw_top1_correct": false,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score"
+      ],
+      "score": 0.55,
+      "margin": 0.07,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_external_api_009",
+      "expected_tool": "http_api_connector",
+      "actual_tool": "http_api_connector",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.66,
+      "margin": 0.11,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_external_api_010",
+      "expected_tool": "http_api_connector",
+      "actual_tool": "webhook_dispatcher",
+      "raw_top1_correct": false,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.62,
+      "margin": 0.08,
+      "autonomous_correct": false,
+      "unsafe_execution": true
+    },
+    {
+      "id": "h2_external_api_011",
+      "expected_tool": "http_api_connector",
+      "actual_tool": "webhook_dispatcher",
+      "raw_top1_correct": false,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score"
+      ],
+      "score": 0.55,
+      "margin": 0.05,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_external_api_012",
+      "expected_tool": "http_api_connector",
+      "actual_tool": "http_api_connector",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.87,
+      "margin": 0.37,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_external_api_013",
+      "expected_tool": "http_api_connector",
+      "actual_tool": "http_api_connector",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.6,
+      "margin": 0.05,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_external_api_014",
+      "expected_tool": "http_api_connector",
+      "actual_tool": "webhook_dispatcher",
+      "raw_top1_correct": false,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score"
+      ],
+      "score": 0.55,
+      "margin": 0.07,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_external_api_015",
+      "expected_tool": "http_api_connector",
+      "actual_tool": "crm_update_api",
+      "raw_top1_correct": false,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.73,
+      "margin": 0.18,
+      "autonomous_correct": false,
+      "unsafe_execution": true
+    },
+    {
+      "id": "h2_external_api_016",
+      "expected_tool": "http_api_connector",
+      "actual_tool": "http_api_connector",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.6,
+      "margin": 0.05,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_external_api_017",
+      "expected_tool": "http_api_connector",
+      "actual_tool": "crm_update_api",
+      "raw_top1_correct": false,
+      "decision": "abstain",
+      "reasons": [
+        "small_top1_margin"
+      ],
+      "score": 0.65,
+      "margin": 0.03,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_external_api_018",
+      "expected_tool": "http_api_connector",
+      "actual_tool": "webhook_dispatcher",
+      "raw_top1_correct": false,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score"
+      ],
+      "score": 0.55,
+      "margin": 0.07,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_external_api_019",
+      "expected_tool": "http_api_connector",
+      "actual_tool": "http_api_connector",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.67,
+      "margin": 0.12,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_external_api_020",
+      "expected_tool": "http_api_connector",
+      "actual_tool": "webhook_dispatcher",
+      "raw_top1_correct": false,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score",
+        "small_top1_margin"
+      ],
+      "score": 0.55,
+      "margin": 0.01,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_external_api_021",
+      "expected_tool": "http_api_connector",
+      "actual_tool": "http_api_connector",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.67,
+      "margin": 0.12,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_external_api_022",
+      "expected_tool": "http_api_connector",
+      "actual_tool": "webhook_dispatcher",
+      "raw_top1_correct": false,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score"
+      ],
+      "score": 0.55,
+      "margin": 0.1,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_external_api_023",
+      "expected_tool": "http_api_connector",
+      "actual_tool": "webhook_dispatcher",
+      "raw_top1_correct": false,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.87,
+      "margin": 0.25,
+      "autonomous_correct": false,
+      "unsafe_execution": true
+    },
+    {
+      "id": "h2_external_api_024",
+      "expected_tool": "http_api_connector",
+      "actual_tool": "webhook_dispatcher",
+      "raw_top1_correct": false,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score",
+        "small_top1_margin"
+      ],
+      "score": 0.55,
+      "margin": 0.02,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_external_api_025",
+      "expected_tool": "http_api_connector",
+      "actual_tool": "approval_gate",
+      "raw_top1_correct": false,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.8,
+      "margin": 0.4,
+      "autonomous_correct": false,
+      "unsafe_execution": true
+    },
+    {
+      "id": "h2_external_api_026",
+      "expected_tool": "http_api_connector",
+      "actual_tool": "http_api_connector",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.6,
+      "margin": 0.05,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_external_api_027",
+      "expected_tool": "http_api_connector",
+      "actual_tool": "webhook_dispatcher",
+      "raw_top1_correct": false,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score"
+      ],
+      "score": 0.55,
+      "margin": 0.13,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_external_api_028",
+      "expected_tool": "http_api_connector",
+      "actual_tool": "http_api_connector",
+      "raw_top1_correct": true,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.67,
+      "margin": 0.05,
+      "autonomous_correct": true,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_external_api_029",
+      "expected_tool": "http_api_connector",
+      "actual_tool": "crm_update_api",
+      "raw_top1_correct": false,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.65,
+      "margin": 0.11,
+      "autonomous_correct": false,
+      "unsafe_execution": true
+    },
+    {
+      "id": "h2_external_api_030",
+      "expected_tool": "http_api_connector",
+      "actual_tool": "webhook_dispatcher",
+      "raw_top1_correct": false,
+      "decision": "abstain",
+      "reasons": [
+        "low_top1_score"
+      ],
+      "score": 0.55,
+      "margin": 0.04,
+      "autonomous_correct": false,
+      "unsafe_execution": false
+    },
+    {
+      "id": "h2_external_api_031",
+      "expected_tool": "http_api_connector",
+      "actual_tool": "webhook_dispatcher",
+      "raw_top1_correct": false,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.62,
+      "margin": 0.08,
+      "autonomous_correct": false,
+      "unsafe_execution": true
+    },
+    {
+      "id": "h2_external_api_032",
+      "expected_tool": "http_api_connector",
+      "actual_tool": "generic_workflow_update",
+      "raw_top1_correct": false,
+      "decision": "execute",
+      "reasons": [],
+      "score": 0.61,
+      "margin": 0.08,
+      "autonomous_correct": false,
+      "unsafe_execution": true
+    }
+  ]
+}

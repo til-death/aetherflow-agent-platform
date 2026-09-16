@@ -21,7 +21,7 @@ export const Route = createFileRoute("/_layout/items")({
   head: () => ({
     meta: [
       {
-        title: "Items - AetherFlow",
+        title: "Items - 稳流",
       },
     ],
   }),

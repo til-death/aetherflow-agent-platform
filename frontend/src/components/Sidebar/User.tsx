@@ -33,7 +33,7 @@ function UserInfo({ fullName, email }: UserInfoProps) {
         </AvatarFallback>
       </Avatar>
       <div className="flex flex-col items-start min-w-0">
-        <p className="text-sm font-bold truncate w-full">{fullName || "AetherFlow user"}</p>
+        <p className="text-sm font-bold truncate w-full">{fullName || "稳流用户"}</p>
         <p className="text-xs text-muted-foreground truncate w-full">{email}</p>
       </div>
     </div>

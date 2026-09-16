@@ -16,6 +16,7 @@ from app.agent.retrieval import progressive_retrieve, recover_evidence
 from app.agent.tool_registry import (
     SCENARIO_TEAM,
     TOOLS,
+    assess_tool_decision,
     classify_scenario,
     list_tools,
     rank_tools,
@@ -160,6 +161,19 @@ class AetherFlowRuntime:
 
         ranked_tools = rank_tools(text, scenario)
         selected_tool = ranked_tools[0]
+        tool_decision = assess_tool_decision(text, scenario, ranked_tools)
+        if tool_decision["decision"] == "abstain":
+            if failure_type == AgentFailureType.NONE:
+                failure_type = AgentFailureType.LOW_CONFIDENCE
+            recovery_action = "; ".join(
+                action
+                for action in [
+                    recovery_action,
+                    "Tool Router abstained before execution",
+                    f"Reasons: {', '.join(tool_decision['reasons'])}",
+                ]
+                if action
+            )
         self._add_step(
             session=session,
             run=run,
@@ -168,12 +182,33 @@ class AetherFlowRuntime:
             agent_name="ToolRouter",
             tool_name=selected_tool["name"],
             input_snapshot=f"scenario={scenario}",
-            output_snapshot=f"selected={selected_tool['name']} score={selected_tool['score']:.2f}",
-            confidence=selected_tool["score"],
-            metadata={"ranked_tools": ranked_tools[:4], "scoring": "scenario + semantic + success - risk - latency"},
+            output_snapshot=(
+                f"selected={selected_tool['name']} score={selected_tool['score']:.2f} decision={tool_decision['decision']}"
+            ),
+            confidence=tool_decision["confidence"],
+            status="warning" if tool_decision["decision"] == "abstain" else "success",
+            metadata={
+                "ranked_tools": ranked_tools[:4],
+                "scoring": "scenario + semantic + capability + success - boundary - risk - latency",
+                "decision": tool_decision,
+            },
         )
 
-        tool_result = execute_tool(selected_tool["name"], task, evidence, graph)
+        if tool_decision["decision"] == "abstain":
+            tool_result = {
+                "summary": "工具路由置信度不足，已暂停执行并请求补充信息或人工确认。",
+                "expected_output_missing": True,
+                "confidence": tool_decision["confidence"],
+                "evidence_count": len(evidence.get("chunks", [])),
+                "graph_node_count": len(graph),
+                "dry_run": True,
+                "real_tool": False,
+                "recovery_required": True,
+                "recovery_action": recovery_action,
+                "abstained": True,
+            }
+        else:
+            tool_result = execute_tool(selected_tool["name"], task, evidence, graph)
         self._add_step(
             session=session,
             run=run,
@@ -184,6 +219,7 @@ class AetherFlowRuntime:
             input_snapshot=task.objective,
             output_snapshot=tool_result["summary"],
             confidence=tool_result["confidence"],
+            status="recovered" if tool_decision["decision"] == "abstain" else "success",
             metadata=tool_result,
         )
 

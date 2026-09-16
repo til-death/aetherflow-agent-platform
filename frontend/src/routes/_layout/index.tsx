@@ -40,7 +40,7 @@ import {
 
 export const Route = createFileRoute("/_layout/")({
   component: Workspace,
-  head: () => ({ meta: [{ title: "工作台 - AetherFlow" }] }),
+  head: () => ({ meta: [{ title: "工作台 - 稳流" }] }),
 })
 
 type WorkspaceMode = {

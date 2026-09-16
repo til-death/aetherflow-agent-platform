@@ -8,9 +8,12 @@ function extractErrorMessage(err: ApiError): string {
 
   const errDetail = (err.body as any)?.detail
   if (Array.isArray(errDetail) && errDetail.length > 0) {
-    return errDetail[0].msg
+    return `${errDetail[0].msg}${err.url ? `（${err.url}）` : ""}`
   }
-  return errDetail || "Something went wrong."
+  if (typeof errDetail === "string" && errDetail.trim()) {
+    return `${errDetail}（HTTP ${err.status}${err.url ? ` · ${err.url}` : ""}）`
+  }
+  return `${err.statusText || "请求失败"}（HTTP ${err.status}${err.url ? ` · ${err.url}` : ""}）`
 }
 
 export const handleError = function (

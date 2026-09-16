@@ -46,7 +46,7 @@ import {
 export const Route = createFileRoute("/_layout/tasks")({
   component: Tasks,
   head: () => ({
-    meta: [{ title: "提交任务 - AetherFlow" }],
+    meta: [{ title: "提交任务 - 稳流" }],
   }),
 })
 

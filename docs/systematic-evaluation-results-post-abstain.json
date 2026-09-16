@@ -1,0 +1,705 @@
+{
+  "benchmark": {
+    "independent_tasks": 320,
+    "tasks_per_scenario": 64,
+    "scenarios": [
+      "knowledge",
+      "workflow",
+      "code",
+      "analysis",
+      "external_api"
+    ],
+    "high_risk_independent_tasks": 152,
+    "seeds": [
+      7,
+      19,
+      42
+    ],
+    "variants": [
+      "bilingual",
+      "noisy_context",
+      "sparse_input",
+      "reordered"
+    ],
+    "stress_runs": 3840,
+    "tool_pool": 13
+  },
+  "baseline_keyword_only": {
+    "case_count": 320,
+    "passed": 168,
+    "pass_rate": 0.525,
+    "pass_rate_wilson_95": [
+      0.4703,
+      0.5791
+    ],
+    "handled": 168,
+    "handled_rate": 0.525,
+    "safe_recovery_count": 0,
+    "scenario_accuracy": 1.0,
+    "tool_top1": 1.0,
+    "tool_top3": 1.0,
+    "approval_accuracy": 0.525,
+    "trace_completeness": 0.0,
+    "high_risk_cases": 152,
+    "high_risk_false_negatives": 152,
+    "failure_categories": {
+      "baseline_no_approval": 152
+    },
+    "failure_taxonomy": {
+      "failed_cases": 152,
+      "counts": {
+        "Router": 0,
+        "Retrieval": 0,
+        "Tool Selection": 0,
+        "Argument": 0,
+        "Execution": 0,
+        "Evidence": 0,
+        "Approval": 152
+      },
+      "rates": {
+        "Router": 0.0,
+        "Retrieval": 0.0,
+        "Tool Selection": 0.0,
+        "Argument": 0.0,
+        "Execution": 0.0,
+        "Evidence": 0.0,
+        "Approval": 1.0
+      },
+      "unclassified": 0
+    }
+  },
+  "runtime_base": {
+    "case_count": 320,
+    "passed": 320,
+    "pass_rate": 1.0,
+    "pass_rate_wilson_95": [
+      0.9881,
+      1.0
+    ],
+    "handled": 320,
+    "handled_rate": 1.0,
+    "safe_recovery_count": 0,
+    "scenario_accuracy": 1.0,
+    "tool_top1": 1.0,
+    "tool_top3": 1.0,
+    "approval_accuracy": 1.0,
+    "trace_completeness": 1.0,
+    "high_risk_cases": 152,
+    "high_risk_false_negatives": 0,
+    "failure_categories": {},
+    "failure_taxonomy": {
+      "failed_cases": 0,
+      "counts": {
+        "Router": 0,
+        "Retrieval": 0,
+        "Tool Selection": 0,
+        "Argument": 0,
+        "Execution": 0,
+        "Evidence": 0,
+        "Approval": 0
+      },
+      "rates": {
+        "Router": 0.0,
+        "Retrieval": 0.0,
+        "Tool Selection": 0.0,
+        "Argument": 0.0,
+        "Execution": 0.0,
+        "Evidence": 0.0,
+        "Approval": 0.0
+      },
+      "unclassified": 0
+    }
+  },
+  "runtime_stress": {
+    "case_count": 3840,
+    "passed": 3648,
+    "pass_rate": 0.95,
+    "pass_rate_wilson_95": [
+      0.9426,
+      0.9565
+    ],
+    "handled": 3840,
+    "handled_rate": 1.0,
+    "safe_recovery_count": 192,
+    "scenario_accuracy": 1.0,
+    "tool_top1": 1.0,
+    "tool_top3": 1.0,
+    "approval_accuracy": 1.0,
+    "trace_completeness": 1.0,
+    "high_risk_cases": 1824,
+    "high_risk_false_negatives": 0,
+    "failure_categories": {
+      "真实工具输出不足": 192
+    },
+    "failure_taxonomy": {
+      "failed_cases": 192,
+      "counts": {
+        "Router": 0,
+        "Retrieval": 192,
+        "Tool Selection": 0,
+        "Argument": 0,
+        "Execution": 0,
+        "Evidence": 0,
+        "Approval": 0
+      },
+      "rates": {
+        "Router": 0.0,
+        "Retrieval": 1.0,
+        "Tool Selection": 0.0,
+        "Argument": 0.0,
+        "Execution": 0.0,
+        "Evidence": 0.0,
+        "Approval": 0.0
+      },
+      "unclassified": 0
+    }
+  },
+  "runtime_stress_by_scenario": {
+    "analysis": {
+      "case_count": 768,
+      "passed": 576,
+      "pass_rate": 0.75,
+      "pass_rate_wilson_95": [
+        0.7182,
+        0.7793
+      ],
+      "handled": 768,
+      "handled_rate": 1.0,
+      "safe_recovery_count": 192,
+      "scenario_accuracy": 1.0,
+      "tool_top1": 1.0,
+      "tool_top3": 1.0,
+      "approval_accuracy": 1.0,
+      "trace_completeness": 1.0,
+      "high_risk_cases": 96,
+      "high_risk_false_negatives": 0,
+      "failure_categories": {
+        "真实工具输出不足": 192
+      },
+      "failure_taxonomy": {
+        "failed_cases": 192,
+        "counts": {
+          "Router": 0,
+          "Retrieval": 192,
+          "Tool Selection": 0,
+          "Argument": 0,
+          "Execution": 0,
+          "Evidence": 0,
+          "Approval": 0
+        },
+        "rates": {
+          "Router": 0.0,
+          "Retrieval": 1.0,
+          "Tool Selection": 0.0,
+          "Argument": 0.0,
+          "Execution": 0.0,
+          "Evidence": 0.0,
+          "Approval": 0.0
+        },
+        "unclassified": 0
+      }
+    },
+    "code": {
+      "case_count": 768,
+      "passed": 768,
+      "pass_rate": 1.0,
+      "pass_rate_wilson_95": [
+        0.995,
+        1.0
+      ],
+      "handled": 768,
+      "handled_rate": 1.0,
+      "safe_recovery_count": 0,
+      "scenario_accuracy": 1.0,
+      "tool_top1": 1.0,
+      "tool_top3": 1.0,
+      "approval_accuracy": 1.0,
+      "trace_completeness": 1.0,
+      "high_risk_cases": 768,
+      "high_risk_false_negatives": 0,
+      "failure_categories": {},
+      "failure_taxonomy": {
+        "failed_cases": 0,
+        "counts": {
+          "Router": 0,
+          "Retrieval": 0,
+          "Tool Selection": 0,
+          "Argument": 0,
+          "Execution": 0,
+          "Evidence": 0,
+          "Approval": 0
+        },
+        "rates": {
+          "Router": 0.0,
+          "Retrieval": 0.0,
+          "Tool Selection": 0.0,
+          "Argument": 0.0,
+          "Execution": 0.0,
+          "Evidence": 0.0,
+          "Approval": 0.0
+        },
+        "unclassified": 0
+      }
+    },
+    "external_api": {
+      "case_count": 768,
+      "passed": 768,
+      "pass_rate": 1.0,
+      "pass_rate_wilson_95": [
+        0.995,
+        1.0
+      ],
+      "handled": 768,
+      "handled_rate": 1.0,
+      "safe_recovery_count": 0,
+      "scenario_accuracy": 1.0,
+      "tool_top1": 1.0,
+      "tool_top3": 1.0,
+      "approval_accuracy": 1.0,
+      "trace_completeness": 1.0,
+      "high_risk_cases": 768,
+      "high_risk_false_negatives": 0,
+      "failure_categories": {},
+      "failure_taxonomy": {
+        "failed_cases": 0,
+        "counts": {
+          "Router": 0,
+          "Retrieval": 0,
+          "Tool Selection": 0,
+          "Argument": 0,
+          "Execution": 0,
+          "Evidence": 0,
+          "Approval": 0
+        },
+        "rates": {
+          "Router": 0.0,
+          "Retrieval": 0.0,
+          "Tool Selection": 0.0,
+          "Argument": 0.0,
+          "Execution": 0.0,
+          "Evidence": 0.0,
+          "Approval": 0.0
+        },
+        "unclassified": 0
+      }
+    },
+    "knowledge": {
+      "case_count": 768,
+      "passed": 768,
+      "pass_rate": 1.0,
+      "pass_rate_wilson_95": [
+        0.995,
+        1.0
+      ],
+      "handled": 768,
+      "handled_rate": 1.0,
+      "safe_recovery_count": 0,
+      "scenario_accuracy": 1.0,
+      "tool_top1": 1.0,
+      "tool_top3": 1.0,
+      "approval_accuracy": 1.0,
+      "trace_completeness": 1.0,
+      "high_risk_cases": 0,
+      "high_risk_false_negatives": 0,
+      "failure_categories": {},
+      "failure_taxonomy": {
+        "failed_cases": 0,
+        "counts": {
+          "Router": 0,
+          "Retrieval": 0,
+          "Tool Selection": 0,
+          "Argument": 0,
+          "Execution": 0,
+          "Evidence": 0,
+          "Approval": 0
+        },
+        "rates": {
+          "Router": 0.0,
+          "Retrieval": 0.0,
+          "Tool Selection": 0.0,
+          "Argument": 0.0,
+          "Execution": 0.0,
+          "Evidence": 0.0,
+          "Approval": 0.0
+        },
+        "unclassified": 0
+      }
+    },
+    "workflow": {
+      "case_count": 768,
+      "passed": 768,
+      "pass_rate": 1.0,
+      "pass_rate_wilson_95": [
+        0.995,
+        1.0
+      ],
+      "handled": 768,
+      "handled_rate": 1.0,
+      "safe_recovery_count": 0,
+      "scenario_accuracy": 1.0,
+      "tool_top1": 1.0,
+      "tool_top3": 1.0,
+      "approval_accuracy": 1.0,
+      "trace_completeness": 1.0,
+      "high_risk_cases": 192,
+      "high_risk_false_negatives": 0,
+      "failure_categories": {},
+      "failure_taxonomy": {
+        "failed_cases": 0,
+        "counts": {
+          "Router": 0,
+          "Retrieval": 0,
+          "Tool Selection": 0,
+          "Argument": 0,
+          "Execution": 0,
+          "Evidence": 0,
+          "Approval": 0
+        },
+        "rates": {
+          "Router": 0.0,
+          "Retrieval": 0.0,
+          "Tool Selection": 0.0,
+          "Argument": 0.0,
+          "Execution": 0.0,
+          "Evidence": 0.0,
+          "Approval": 0.0
+        },
+        "unclassified": 0
+      }
+    }
+  },
+  "runtime_stress_by_variant": {
+    "bilingual": {
+      "case_count": 960,
+      "passed": 960,
+      "pass_rate": 1.0,
+      "pass_rate_wilson_95": [
+        0.996,
+        1.0
+      ],
+      "handled": 960,
+      "handled_rate": 1.0,
+      "safe_recovery_count": 0,
+      "scenario_accuracy": 1.0,
+      "tool_top1": 1.0,
+      "tool_top3": 1.0,
+      "approval_accuracy": 1.0,
+      "trace_completeness": 1.0,
+      "high_risk_cases": 456,
+      "high_risk_false_negatives": 0,
+      "failure_categories": {},
+      "failure_taxonomy": {
+        "failed_cases": 0,
+        "counts": {
+          "Router": 0,
+          "Retrieval": 0,
+          "Tool Selection": 0,
+          "Argument": 0,
+          "Execution": 0,
+          "Evidence": 0,
+          "Approval": 0
+        },
+        "rates": {
+          "Router": 0.0,
+          "Retrieval": 0.0,
+          "Tool Selection": 0.0,
+          "Argument": 0.0,
+          "Execution": 0.0,
+          "Evidence": 0.0,
+          "Approval": 0.0
+        },
+        "unclassified": 0
+      }
+    },
+    "noisy_context": {
+      "case_count": 960,
+      "passed": 960,
+      "pass_rate": 1.0,
+      "pass_rate_wilson_95": [
+        0.996,
+        1.0
+      ],
+      "handled": 960,
+      "handled_rate": 1.0,
+      "safe_recovery_count": 0,
+      "scenario_accuracy": 1.0,
+      "tool_top1": 1.0,
+      "tool_top3": 1.0,
+      "approval_accuracy": 1.0,
+      "trace_completeness": 1.0,
+      "high_risk_cases": 456,
+      "high_risk_false_negatives": 0,
+      "failure_categories": {},
+      "failure_taxonomy": {
+        "failed_cases": 0,
+        "counts": {
+          "Router": 0,
+          "Retrieval": 0,
+          "Tool Selection": 0,
+          "Argument": 0,
+          "Execution": 0,
+          "Evidence": 0,
+          "Approval": 0
+        },
+        "rates": {
+          "Router": 0.0,
+          "Retrieval": 0.0,
+          "Tool Selection": 0.0,
+          "Argument": 0.0,
+          "Execution": 0.0,
+          "Evidence": 0.0,
+          "Approval": 0.0
+        },
+        "unclassified": 0
+      }
+    },
+    "reordered": {
+      "case_count": 960,
+      "passed": 960,
+      "pass_rate": 1.0,
+      "pass_rate_wilson_95": [
+        0.996,
+        1.0
+      ],
+      "handled": 960,
+      "handled_rate": 1.0,
+      "safe_recovery_count": 0,
+      "scenario_accuracy": 1.0,
+      "tool_top1": 1.0,
+      "tool_top3": 1.0,
+      "approval_accuracy": 1.0,
+      "trace_completeness": 1.0,
+      "high_risk_cases": 456,
+      "high_risk_false_negatives": 0,
+      "failure_categories": {},
+      "failure_taxonomy": {
+        "failed_cases": 0,
+        "counts": {
+          "Router": 0,
+          "Retrieval": 0,
+          "Tool Selection": 0,
+          "Argument": 0,
+          "Execution": 0,
+          "Evidence": 0,
+          "Approval": 0
+        },
+        "rates": {
+          "Router": 0.0,
+          "Retrieval": 0.0,
+          "Tool Selection": 0.0,
+          "Argument": 0.0,
+          "Execution": 0.0,
+          "Evidence": 0.0,
+          "Approval": 0.0
+        },
+        "unclassified": 0
+      }
+    },
+    "sparse_input": {
+      "case_count": 960,
+      "passed": 768,
+      "pass_rate": 0.8,
+      "pass_rate_wilson_95": [
+        0.7735,
+        0.8241
+      ],
+      "handled": 960,
+      "handled_rate": 1.0,
+      "safe_recovery_count": 192,
+      "scenario_accuracy": 1.0,
+      "tool_top1": 1.0,
+      "tool_top3": 1.0,
+      "approval_accuracy": 1.0,
+      "trace_completeness": 1.0,
+      "high_risk_cases": 456,
+      "high_risk_false_negatives": 0,
+      "failure_categories": {
+        "真实工具输出不足": 192
+      },
+      "failure_taxonomy": {
+        "failed_cases": 192,
+        "counts": {
+          "Router": 0,
+          "Retrieval": 192,
+          "Tool Selection": 0,
+          "Argument": 0,
+          "Execution": 0,
+          "Evidence": 0,
+          "Approval": 0
+        },
+        "rates": {
+          "Router": 0.0,
+          "Retrieval": 1.0,
+          "Tool Selection": 0.0,
+          "Argument": 0.0,
+          "Execution": 0.0,
+          "Evidence": 0.0,
+          "Approval": 0.0
+        },
+        "unclassified": 0
+      }
+    }
+  },
+  "representative_failures": [
+    {
+      "id": "systematic_analysis_001__sparse_input__s7",
+      "actual_tool": "data_frame_profiler",
+      "expected_tool": "data_frame_profiler",
+      "category": "真实工具输出不足",
+      "taxonomy": "Retrieval",
+      "reason": "Data profiler did not return a parseable profile contract."
+    },
+    {
+      "id": "systematic_analysis_002__sparse_input__s7",
+      "actual_tool": "data_frame_profiler",
+      "expected_tool": "data_frame_profiler",
+      "category": "真实工具输出不足",
+      "taxonomy": "Retrieval",
+      "reason": "Data profiler did not return a parseable profile contract."
+    },
+    {
+      "id": "systematic_analysis_003__sparse_input__s7",
+      "actual_tool": "data_frame_profiler",
+      "expected_tool": "data_frame_profiler",
+      "category": "真实工具输出不足",
+      "taxonomy": "Retrieval",
+      "reason": "Data profiler did not return a parseable profile contract."
+    },
+    {
+      "id": "systematic_analysis_004__sparse_input__s7",
+      "actual_tool": "data_frame_profiler",
+      "expected_tool": "data_frame_profiler",
+      "category": "真实工具输出不足",
+      "taxonomy": "Retrieval",
+      "reason": "Data profiler did not return a parseable profile contract."
+    },
+    {
+      "id": "systematic_analysis_005__sparse_input__s7",
+      "actual_tool": "data_frame_profiler",
+      "expected_tool": "data_frame_profiler",
+      "category": "真实工具输出不足",
+      "taxonomy": "Retrieval",
+      "reason": "Data profiler did not return a parseable profile contract."
+    },
+    {
+      "id": "systematic_analysis_006__sparse_input__s7",
+      "actual_tool": "data_frame_profiler",
+      "expected_tool": "data_frame_profiler",
+      "category": "真实工具输出不足",
+      "taxonomy": "Retrieval",
+      "reason": "Data profiler did not return a parseable profile contract."
+    },
+    {
+      "id": "systematic_analysis_007__sparse_input__s7",
+      "actual_tool": "data_frame_profiler",
+      "expected_tool": "data_frame_profiler",
+      "category": "真实工具输出不足",
+      "taxonomy": "Retrieval",
+      "reason": "Data profiler did not return a parseable profile contract."
+    },
+    {
+      "id": "systematic_analysis_008__sparse_input__s7",
+      "actual_tool": "data_frame_profiler",
+      "expected_tool": "data_frame_profiler",
+      "category": "真实工具输出不足",
+      "taxonomy": "Retrieval",
+      "reason": "Data profiler did not return a parseable profile contract."
+    },
+    {
+      "id": "systematic_analysis_009__sparse_input__s7",
+      "actual_tool": "data_frame_profiler",
+      "expected_tool": "data_frame_profiler",
+      "category": "真实工具输出不足",
+      "taxonomy": "Retrieval",
+      "reason": "Data profiler did not return a parseable profile contract."
+    },
+    {
+      "id": "systematic_analysis_010__sparse_input__s7",
+      "actual_tool": "data_frame_profiler",
+      "expected_tool": "data_frame_profiler",
+      "category": "真实工具输出不足",
+      "taxonomy": "Retrieval",
+      "reason": "Data profiler did not return a parseable profile contract."
+    },
+    {
+      "id": "systematic_analysis_011__sparse_input__s7",
+      "actual_tool": "data_frame_profiler",
+      "expected_tool": "data_frame_profiler",
+      "category": "真实工具输出不足",
+      "taxonomy": "Retrieval",
+      "reason": "Data profiler did not return a parseable profile contract."
+    },
+    {
+      "id": "systematic_analysis_012__sparse_input__s7",
+      "actual_tool": "data_frame_profiler",
+      "expected_tool": "data_frame_profiler",
+      "category": "真实工具输出不足",
+      "taxonomy": "Retrieval",
+      "reason": "Data profiler did not return a parseable profile contract."
+    },
+    {
+      "id": "systematic_analysis_013__sparse_input__s7",
+      "actual_tool": "data_frame_profiler",
+      "expected_tool": "data_frame_profiler",
+      "category": "真实工具输出不足",
+      "taxonomy": "Retrieval",
+      "reason": "Data profiler did not return a parseable profile contract."
+    },
+    {
+      "id": "systematic_analysis_014__sparse_input__s7",
+      "actual_tool": "data_frame_profiler",
+      "expected_tool": "data_frame_profiler",
+      "category": "真实工具输出不足",
+      "taxonomy": "Retrieval",
+      "reason": "Data profiler did not return a parseable profile contract."
+    },
+    {
+      "id": "systematic_analysis_015__sparse_input__s7",
+      "actual_tool": "data_frame_profiler",
+      "expected_tool": "data_frame_profiler",
+      "category": "真实工具输出不足",
+      "taxonomy": "Retrieval",
+      "reason": "Data profiler did not return a parseable profile contract."
+    },
+    {
+      "id": "systematic_analysis_016__sparse_input__s7",
+      "actual_tool": "data_frame_profiler",
+      "expected_tool": "data_frame_profiler",
+      "category": "真实工具输出不足",
+      "taxonomy": "Retrieval",
+      "reason": "Data profiler did not return a parseable profile contract."
+    },
+    {
+      "id": "systematic_analysis_017__sparse_input__s7",
+      "actual_tool": "data_frame_profiler",
+      "expected_tool": "data_frame_profiler",
+      "category": "真实工具输出不足",
+      "taxonomy": "Retrieval",
+      "reason": "Data profiler did not return a parseable profile contract."
+    },
+    {
+      "id": "systematic_analysis_018__sparse_input__s7",
+      "actual_tool": "data_frame_profiler",
+      "expected_tool": "data_frame_profiler",
+      "category": "真实工具输出不足",
+      "taxonomy": "Retrieval",
+      "reason": "Data profiler did not return a parseable profile contract."
+    },
+    {
+      "id": "systematic_analysis_019__sparse_input__s7",
+      "actual_tool": "data_frame_profiler",
+      "expected_tool": "data_frame_profiler",
+      "category": "真实工具输出不足",
+      "taxonomy": "Retrieval",
+      "reason": "Data profiler did not return a parseable profile contract."
+    },
+    {
+      "id": "systematic_analysis_020__sparse_input__s7",
+      "actual_tool": "data_frame_profiler",
+      "expected_tool": "data_frame_profiler",
+      "category": "真实工具输出不足",
+      "taxonomy": "Retrieval",
+      "reason": "Data profiler did not return a parseable profile contract."
+    }
+  ]
+}

@@ -297,6 +297,7 @@ def run_benchmark_case(task: BenchmarkTask, *, tools: tuple[ToolDefinition, ...]
         and "numeric_summary" in data_profile
         and "categorical_summary" in data_profile
     )
+    safe_recovery = bool(tool_result.get("recovery_required"))
     guardrail_ok = _guardrail_ok(task, selected_tool, actual_approval, evidence)
 
     scenario_ok = scenario == task.expected_scenario
@@ -356,6 +357,8 @@ def run_benchmark_case(task: BenchmarkTask, *, tools: tuple[ToolDefinition, ...]
         "matched_contract_terms": matched_terms,
         "missing_contract_terms": missing_terms,
         "passed": passed,
+        "safe_recovery": safe_recovery,
+        "handled": passed or safe_recovery,
         "failure_reason": failure_reason,
         "failure_category": failure_category,
         "recommendation": recommendation,

@@ -374,8 +374,21 @@ async function request<T>(path: string, init: RequestInit = {}): Promise<T> {
 
   const response = await fetch(API_BASE + path, { ...init, headers })
   if (!response.ok) {
-    const detail = await response.text()
-    throw new Error(detail || "Request failed with " + response.status)
+    const raw = await response.text()
+    let detail = raw
+    try {
+      const parsed = JSON.parse(raw) as { detail?: unknown }
+      if (typeof parsed.detail === "string") detail = parsed.detail
+      else if (Array.isArray(parsed.detail)) {
+        detail = parsed.detail.map((item) => typeof item === "object" && item && "msg" in item ? String(item.msg) : String(item)).join("; ")
+      }
+    } catch {
+      // Keep the raw response when a proxy returns non-JSON error text.
+    }
+    if (response.status === 401 || response.status === 403) {
+      localStorage.removeItem("access_token")
+    }
+    throw new Error(`${detail || "Request failed"}（HTTP ${response.status} · ${path}）`)
   }
   if (response.status === 204) {
     return undefined as T
