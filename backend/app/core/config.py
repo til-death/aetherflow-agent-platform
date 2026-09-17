@@ -44,6 +44,13 @@ class Settings(BaseSettings):
     AGENT_LLM_MAX_RETRIES: int = 2
     AGENT_STORE_RESPONSES: bool = False
 
+    REDIS_URL: str | None = None
+    REDIS_RUNTIME_EVENT_TTL_SECONDS: int = 86400
+
+    OTEL_ENABLED: bool = False
+    OTEL_SERVICE_NAME: str = "shuiliu-agent-runtime"
+    OTEL_EXPORTER_OTLP_ENDPOINT: str | None = None
+
     BACKEND_CORS_ORIGINS: Annotated[
         list[AnyUrl] | str, BeforeValidator(parse_cors)
     ] = []

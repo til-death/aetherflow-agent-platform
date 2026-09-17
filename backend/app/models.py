@@ -325,6 +325,17 @@ class AgentRunsPublic(SQLModel):
     count: int
 
 
+class RuntimeEventPublic(SQLModel):
+    event_id: str
+    run_id: uuid.UUID
+    stage: str
+    agent_name: str
+    status: str
+    tool_name: str | None = None
+    confidence: float = 0.0
+    created_at: datetime
+
+
 class AgentRunApprovalRequest(SQLModel):
     comment: str | None = Field(default=None, max_length=500)
 

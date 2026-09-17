@@ -83,6 +83,7 @@ flowchart LR
 | Critic Agent | 在结果交付前做安全和完整性审核 | 证据覆盖率、幻觉风险、工具风险、审批需求，支持 LLM 与规则双模式 |
 | Memory Policy | 控制哪些结果值得沉淀 | 依据置信度和证据质量决定短期/长期记忆 |
 | Trace 回放 | 能解释一次运行到底发生了什么 | Scenario、Planner、Retriever、Tool Router、Executor、Critic、Memory 全链路记录 |
+| Runtime 基础设施 | 支持运行状态持久化、链路观测和外部工具发现 | Redis 事件流、OpenTelemetry Span、MCP `tools/list` 兼容目录、PostgreSQL Trace 主存储 |
 | Reliability Evaluation | 用真实 benchmark 判断版本是否可放行 | 10 条 sample benchmark、Tool Top@K、场景准确率、审批准确率、Trace 完整性、输出契约和 Release Gate |
 
 ## 主要代码
@@ -95,6 +96,8 @@ backend/app/
 │   └── operations.py        # 企业运行概览和审批队列 API
 ├── agent/
 │   ├── runtime.py           # Runtime 主编排和 AgentRun/Trace 落库
+│   ├── runtime_state.py     # Redis 运行状态和事件流，Redis 不可用时自动降级
+│   ├── mcp_adapter.py       # Tool Registry 到 MCP tools/list 的适配
 │   ├── planner.py           # LLM/规则双模 DAG Planner
 │   ├── validators.py        # DAG、工具、检索和审批校验
 │   ├── retrieval.py         # Progressive Retrieval 和证据包
@@ -117,6 +120,16 @@ frontend/src/
 ├── lib/aetherflow-api.ts            # Agent API 请求封装
 └── components/                     # 通用 UI 和用户设置组件
 ```
+
+## 工程化运行能力
+
+稳流保留 PostgreSQL 作为任务和 Trace 的事实来源，同时增加三类基础设施能力：
+
+- **Redis Runtime State**：每次运行写入状态快照和阶段事件流，便于长任务恢复、运行面板订阅和故障排查；Redis 不可用时自动回退到 PostgreSQL Trace，不阻断主流程。
+- **OpenTelemetry**：开启 `OTEL_ENABLED=true` 并配置 `OTEL_EXPORTER_OTLP_ENDPOINT` 后，FastAPI 请求和每个 Agent 阶段会输出可关联的 Span，包含运行 ID、阶段、工具、置信度和状态。
+- **MCP Tool Catalog**：登录后访问 `GET /api/v1/agent/mcp/tools`，可获得 MCP `tools/list` 形状的工具目录，同时保留稳流的场景、风险、能力边界和成功率元数据；外部调用仍需经过现有 Runtime 和审批策略。
+
+本地执行 `docker compose up -d --build` 会同时启动 PostgreSQL 和 Redis。运行状态接口为 `GET /api/v1/agent/runtime/health`，它会明确返回 Redis 是否可用以及 PostgreSQL 是否仍作为 Trace 主存储。
 
 ## 快速启动
 
@@ -231,7 +244,7 @@ uv run --directory backend python scripts/run_reliability_eval.py --dataset tool
 
 | 范围 | 结果 |
 | --- | --- |
-| Agent 核心单测 | `9 passed` |
+| Agent 核心单测 | `14 passed` |
 | `sample` 基线 | `10/10` 通过 |
 | `sample` 压力测试 | `114/120` 通过，95% |
 | `toolluban` 基线 | `13/13` 通过 |

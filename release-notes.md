@@ -1,5 +1,12 @@
 # 稳流 Release Notes
 
+## 0.3.0 - Runtime infrastructure adapters
+
+- Added Redis-backed runtime state and event streams with PostgreSQL fallback.
+- Added optional OpenTelemetry FastAPI and Agent-stage tracing with OTLP HTTP export.
+- Added an MCP-compatible Tool Registry catalog endpoint with scenario, risk, capability and exclusion metadata.
+- Added runtime health and Redis event APIs, plus infrastructure regression tests.
+
 ## 0.2.0 - Systematic evaluation and recovery hardening
 
 - Added a stratified 320-task evaluation set covering five runtime scenarios, with 64 independently labelled tasks per scenario.

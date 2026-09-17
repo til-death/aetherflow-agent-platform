@@ -13,6 +13,7 @@ from app.agent.llm import LLMClient
 from app.agent.memory import compose_final_answer, memory_policy
 from app.agent.planner import build_execution_graph
 from app.agent.retrieval import progressive_retrieve, recover_evidence
+from app.agent.runtime_state import runtime_state
 from app.agent.tool_registry import (
     SCENARIO_TEAM,
     TOOLS,
@@ -35,11 +36,13 @@ from app.models import (
     WorkflowTask,
     WorkflowTaskStatus,
 )
+from app.telemetry import stage_span
 
 
 class AetherFlowRuntime:
     def __init__(self) -> None:
         self.llm = LLMClient()
+        self.state_store = runtime_state
 
     def run_task(
         self,
@@ -64,6 +67,7 @@ class AetherFlowRuntime:
         session.add(run)
         session.commit()
         session.refresh(run)
+        self.state_store.record_state(str(run.id), AgentRunStatus.RUNNING, task_id=task.id)
 
         text = task_text(task)
         scenario, scenario_confidence = classify_scenario(task, text)
@@ -308,6 +312,14 @@ class AetherFlowRuntime:
         session.add(run)
         session.commit()
         session.refresh(run)
+        self.state_store.record_state(
+            str(run.id),
+            run.status,
+            task_id=task.id,
+            runtime_version=RUNTIME_VERSION,
+            selected_tool=run.selected_tool,
+            approval_status=run.approval_status,
+        )
         return run
 
     def approve_run(
@@ -367,6 +379,13 @@ class AetherFlowRuntime:
         session.add(run)
         session.commit()
         session.refresh(run)
+        self.state_store.record_state(
+            str(run.id),
+            run.status,
+            task_id=task.id,
+            selected_tool=run.selected_tool,
+            approval_status=run.approval_status,
+        )
         return run
 
     def tools(self) -> list[ToolDefinitionPublic]:
@@ -391,21 +410,41 @@ class AetherFlowRuntime:
         tool_name: str | None = None,
     ) -> None:
         start = perf_counter()
-        step = AgentTraceStep(
-            run_id=run.id,
-            sequence=sequence,
-            stage=stage,
+        with stage_span(
+            stage,
+            run_id=str(run.id),
             agent_name=agent_name,
             tool_name=tool_name,
-            status=status,
-            input_snapshot=self._clip(input_snapshot),
-            output_snapshot=self._clip(output_snapshot),
-            confidence=round(confidence, 2),
-            latency_ms=max(1, int((perf_counter() - start) * 1000) + 10 + sequence * 4),
-            metadata_json=metadata,
+            attributes={"agent.sequence": sequence, "agent.confidence": round(confidence, 2), "agent.status": status},
+        ):
+            latency_ms = max(1, int((perf_counter() - start) * 1000) + 10 + sequence * 4)
+            step = AgentTraceStep(
+                run_id=run.id,
+                sequence=sequence,
+                stage=stage,
+                agent_name=agent_name,
+                tool_name=tool_name,
+                status=status,
+                input_snapshot=self._clip(input_snapshot),
+                output_snapshot=self._clip(output_snapshot),
+                confidence=round(confidence, 2),
+                latency_ms=latency_ms,
+                metadata_json=metadata,
+            )
+            session.add(step)
+            session.commit()
+        self.state_store.record_event(
+            str(run.id),
+            {
+                "run_id": str(run.id),
+                "stage": stage,
+                "agent_name": agent_name,
+                "tool_name": tool_name,
+                "status": status,
+                "confidence": round(confidence, 2),
+                "created_at": datetime.now(timezone.utc).isoformat(),
+            },
         )
-        session.add(step)
-        session.commit()
 
     def _final_status(self, failure_type: str, needs_approval: bool) -> str:
         if needs_approval:

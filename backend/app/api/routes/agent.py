@@ -5,6 +5,7 @@ from fastapi import APIRouter, Header, HTTPException
 from sqlalchemy import and_
 from sqlmodel import col, func, select
 
+from app.agent.mcp_adapter import build_mcp_tool_catalog
 from app.agent.runtime import runtime
 from app.agent.scorers import (
     RunEvaluationPublic,
@@ -16,6 +17,7 @@ from app.agent.scorers import (
     list_builtin_scorers,
     preview_scorer,
 )
+from app.agent.version import RUNTIME_PROFILE, RUNTIME_VERSION
 from app.api.deps import CurrentUser, SessionDep
 from app.models import (
     AgentApprovalStatus,
@@ -31,6 +33,7 @@ from app.models import (
     EvaluationExperimentsPublic,
     EvaluationExperimentSummary,
     EvaluationReportPublic,
+    RuntimeEventPublic,
     ToolDefinitionPublic,
     WorkflowTask,
     WorkflowTaskStatus,
@@ -142,6 +145,22 @@ def read_tools(_current_user: CurrentUser) -> list[ToolDefinitionPublic]:
     return runtime.tools()
 
 
+@router.get("/mcp/tools")
+def read_mcp_tools(_current_user: CurrentUser) -> dict:
+    """Expose the Tool Registry in the MCP tools/list-compatible shape."""
+    return build_mcp_tool_catalog()
+
+
+@router.get("/runtime/health")
+def read_runtime_health(_current_user: CurrentUser) -> dict:
+    return {
+        "runtime_profile": RUNTIME_PROFILE,
+        "runtime_version": RUNTIME_VERSION,
+        "state_store": runtime.state_store.health(),
+        "trace_source_of_truth": "postgresql",
+    }
+
+
 @router.post("/tasks/{task_id}/runs", response_model=AgentRunPublic)
 def run_task_agent(
     *,
@@ -218,6 +237,18 @@ def read_agent_run(
 ) -> AgentRunPublic:
     run = _ensure_run_access(session.get(AgentRun, run_id), current_user)
     return _public_run(session, run)
+
+
+@router.get("/runs/{run_id}/events", response_model=list[RuntimeEventPublic])
+def read_agent_run_events(
+    *,
+    session: SessionDep,
+    current_user: CurrentUser,
+    run_id: uuid.UUID,
+) -> list[RuntimeEventPublic]:
+    run = _ensure_run_access(session.get(AgentRun, run_id), current_user)
+    events = runtime.state_store.read_events(str(run.id))
+    return [RuntimeEventPublic.model_validate(event) for event in events]
 
 
 @router.post("/runs/{run_id}/approve", response_model=AgentRunPublic)

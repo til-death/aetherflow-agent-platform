@@ -85,6 +85,28 @@ export type AgentRunsResponse = {
   count: number
 }
 
+export type RuntimeEvent = {
+  event_id: string
+  run_id: string
+  stage: string
+  agent_name: string
+  status: string
+  tool_name?: string | null
+  confidence: number
+  created_at: string
+}
+
+export type RuntimeHealth = {
+  runtime_profile: string
+  runtime_version: string
+  state_store: {
+    configured: boolean
+    available: boolean
+    backend: string
+  }
+  trace_source_of_truth: string
+}
+
 export type AgentSummary = {
   task_count: number
   active_task_count: number
@@ -414,6 +436,9 @@ export const AetherFlowApi = {
       body: JSON.stringify({ comment: comment ?? null }),
     }),
   readRuns: () => request<AgentRunsResponse>("/api/v1/agent/runs"),
+  readRunEvents: (runId: string) => request<RuntimeEvent[]>("/api/v1/agent/runs/" + runId + "/events"),
+  readRuntimeHealth: () => request<RuntimeHealth>("/api/v1/agent/runtime/health"),
+  readMcpToolCatalog: () => request<Record<string, unknown>>("/api/v1/agent/mcp/tools"),
   readSummary: () => request<AgentSummary>("/api/v1/agent/summary"),
   readOperationsDashboard: (params?: { team?: string; status?: string; limit?: number }) => {
     const search = new URLSearchParams()
