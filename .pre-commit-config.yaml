@@ -18,7 +18,7 @@ repos:
       - id: trailing-whitespace
         exclude: ^frontend/src/client/.*
   - repo: https://github.com/crate-ci/typos
-    rev: bbaefadf97b0ec5fdc942684b647f1a6ab250274 # v1.46.0
+    rev: 512fc24f32f44ab01972217aaaf3dc86ec234d53 # v1.50.2
     hooks:
       - id: typos
         args: [--force-exclude]
